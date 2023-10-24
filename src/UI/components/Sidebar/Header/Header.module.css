@@ -1,0 +1,27 @@
+.header {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-bottom: 10px;
+	border-bottom: 2px solid rgb(216, 228, 238);
+	margin-bottom: 20px;
+}
+
+.headerBlock {
+	width: 110px;
+	text-align: left;
+	align-self: center;
+}
+
+.header h1 {
+	display: inline-block;
+	color: rgb(0, 186, 219);
+	font-size: 18px;
+	margin-left: 5px;
+}
+
+.header img {
+	width: 28px;
+	height: 28px;
+}
