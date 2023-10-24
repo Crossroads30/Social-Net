@@ -1,22 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
+import Chat from './Chat'
 
 class ChatContainer extends React.Component {
-	componentDidMount() {
-    
-  }
+	componentDidMount() {}
 
-	render() { 
-return 
- }
-}
-
-const setStateToProps = state => {
-	return {
-
+	render() {
+		return <Chat />
 	}
 }
 
-export default connect(setStateToProps, {
-})(ChatContainer)
+const mapStateToProps = state => {
+	return {}
+}
+
+export default connect(mapStateToProps, {})(ChatContainer)

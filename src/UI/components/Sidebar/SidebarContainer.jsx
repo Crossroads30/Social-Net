@@ -1,22 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
+import Sidebar from './SideBar'
 
 class SideBarContainer extends React.Component {
-	componentDidMount() {
-    
-  }
+	componentDidMount() {}
 
-	render() { 
-return 
- }
-}
-
-const setStateToProps = state => {
-	return {
-
+	render() {
+		return <Sidebar />
 	}
 }
 
-export default connect(setStateToProps, {
-})(SideBarContainer)
+const mapStateToProps = state => {
+	return {}
+}
+
+export default connect(mapStateToProps, {})(SideBarContainer)
