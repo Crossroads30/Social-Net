@@ -1,7 +1,27 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+	padding: 45px;
+  background-color: rgb(214, 214, 237);
 }
 
+.app-container {
+	display: flex;
+	justify-content: space-between;
+	max-width: 950px;
+	margin: 0 auto;
+	padding: 1rem;
+	text-align: center;
+	border-radius: 25px;
+  background-color: rgba(254, 254, 254, 0.73);
+}
+
+.main {
+  
+}
+
+.box-wrapper {
+  width: 200px;
+  height: 500px;
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.869);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.01), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
