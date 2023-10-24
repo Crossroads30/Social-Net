@@ -1,11 +1,16 @@
 import classNames from 'classnames'
 import cl from './SideBar.module.css'
+import Header from './Header/Header'
+import NavMenu from './NavMenu/NavMenu'
+import OnlineIndicator from './OnlineIndicator/OnlineIndicator'
 
 const Sidebar = () => {
 	return (
-		<div className={classNames([cl.sidebar], 'box-wrapper')}>
-			<h2>sidebar</h2>
-		</div>
+		<aside className={classNames([cl.sidebar], 'box-wrapper')}>
+			<Header/>
+			<NavMenu/>
+			<OnlineIndicator/>
+		</aside>
 	)
 }
 
