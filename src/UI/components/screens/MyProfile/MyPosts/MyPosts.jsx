@@ -2,7 +2,7 @@ import AddPostContainer from './AddPost/AddPostContainer'
 import cl from './MyPosts.module.css'
 import Post from './Post/Post'
 
-const MyPosts = ({posts, newPostMessageBody}) => {
+const MyPosts = ({ posts }) => {
 	return (
 		<div>
 		<AddPostContainer />
