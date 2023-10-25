@@ -10,7 +10,7 @@ const AddPostForm = props => {
 					component={FormElement}
 					element_type='textarea'
 					className={cl.newPostText}
-					name='newPostText'
+					name='newPostMessageText'
 					placeholder='Your post...'
 					validate={null}
 				/>

@@ -1,10 +1,16 @@
-import cl from './AddPost.module.css'
 import { AddPostReduxForm } from './AddPostForm'
 
-const AddPost = () => {
+const AddPost = (props) => {
+
+	const addNewPost = formData => {
+		const newPostMessage = formData.newPostMessageText
+		props.addPost(newPostMessage)
+	}
+
+
 	return (
 		<div>
-			<AddPostReduxForm />
+			<AddPostReduxForm onSubmit={addNewPost} />
 		</div>
 	)
 }
