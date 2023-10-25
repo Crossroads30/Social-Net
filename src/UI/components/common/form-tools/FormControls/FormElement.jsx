@@ -1,4 +1,4 @@
-import cl from './FormControls.module.css'
+import cl from './FormElement.module.css'
 import classNames from 'classnames'
 
  export const FormElement = ({ input, meta: { touched, error }, ...props }) => {
@@ -7,7 +7,7 @@ import classNames from 'classnames'
 	return (
 		<div className={classNames([cl.formControl], hasError ? [cl.error] : '')}>
 			<div>
-				<element_type {...input} {...props} />
+				<props.element_type {...input} {...props} />
 				{hasError && <span>{error}</span>}
 			</div>
 		</div>
