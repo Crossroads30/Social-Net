@@ -1,11 +1,11 @@
 import cl from './AddPost.module.css'
 
 const AddPost = () => {
-  return (
-    <div>
-
-    </div>
-  )
+	return (
+		<div>
+			<AddPostForm />
+		</div>
+	)
 }
 
 export default AddPost
