@@ -1,32 +1,52 @@
 #root {
 	padding: 45px;
-  background-color: rgb(200, 200, 209);
+	background-color: rgb(200, 200, 209);
 }
 
 .app-container {
+	position: relative;
 	display: flex;
 	justify-content: space-between;
-	max-width: 950px;
+	max-width: 1280px;
 	margin: 0 auto;
 	padding: 1rem;
 	text-align: center;
 	border-radius: 25px;
-  background-color: rgb(230, 241, 244);
+	background-color: rgb(230, 241, 244);
 }
 
 .main {
-  width: 100%;
+	width: 100%;
 	padding: 20px;
+	margin-left: 200px;
 }
 
 .box-wrapper {
 	min-width: 200px;
-	max-height: 470px;
+	/* max-height: calc(100vh - 10vh); */
+	height: calc(100vh - 10vh);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-  border-radius: 25px;
-  background-color: rgba(255, 255, 255, 0.869);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.01), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border-radius: 25px;
+	background-color: rgba(255, 255, 255, 0.869);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.01), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	padding: 12px;
+}
+
+.box-wrapper2 {
+
+}
+
+.box-wrapper1 {
+	position: fixed;
+}
+
+button {
+	padding: 8px 30px;
+	font-size: 12px;
+	border: none;
+	border-radius: 5px;
+	background: rgb(55, 174, 249);
+	color: rgba(255, 255, 255, 0.869);
 }
