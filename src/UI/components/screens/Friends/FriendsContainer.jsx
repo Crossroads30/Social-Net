@@ -1,22 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
+import Friends from './Friends'
 
 class FriendsContainer extends React.Component {
-	componentDidMount() {
-    
-  }
+	componentDidMount() {}
 
-	render() { 
-return 
- }
-}
-
-const setStateToProps = state => {
-	return {
-
+	render() {
+		return <Friends />
 	}
 }
 
-export default connect(setStateToProps, {
-})(FriendsContainer)
+const setStateToProps = state => {
+	return {}
+}
+
+export default connect(setStateToProps, {})(FriendsContainer)

@@ -1,22 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
+import Messages from './Messages'
 
 class MessagesContainer extends React.Component {
-	componentDidMount() {
-    
-  }
+	componentDidMount() {}
 
-	render() { 
-return 
- }
-}
-
-const setStateToProps = state => {
-	return {
-
+	render() {
+		return <Messages />
 	}
 }
 
-export default connect(setStateToProps, {
-})(MessagesContainer)
+const setStateToProps = state => {
+	return {}
+}
+
+export default connect(setStateToProps, {})(MessagesContainer)
