@@ -3,9 +3,9 @@ const ADD_POST = 'profile/ADD_POST'
 
   let initialState = {
     posts: [
-      {id:1, postMessage:'Hello everybody!', likes: 2},
-      {id:2, postMessage:"I'm trying really hard and I hope it's worth it!!!", likes: 12},
-      {id:3, postMessage:"Finally i will manage it!", likes: 12},
+      {id:1, message:'Hello everybody!', likes: 2},
+			{id:2, message:"I'm trying really hard and I hope it's worth it!!!", likes: 12},
+      {id:3, message:"Finally i will manage it!", likes: 12},
     ]
   }
 
