@@ -2,9 +2,10 @@ import { applyMiddleware, combineReducers, legacy_createStore as createStore } f
 import thunkMiddleware from 'redux-thunk'
 import { reducer as formReducer } from 'redux-form'
 import { compose } from 'redux'
+import profileReducer from './reducers/profile-reducer'
 
 const reducers = combineReducers({
-	// profilePage: profileReducer,
+	profilePage: profileReducer,
 	// messagesPage: messageReducer,
 	// sidebar: sidebarReducer,
 	// usersPage: usersReducer,
