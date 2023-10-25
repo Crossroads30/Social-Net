@@ -11,7 +11,7 @@ const AddPostForm = props => {
 					element_type='textarea'
 					className={cl.newPostText}
 					name='newPostText'
-					placeholder='   Your post...'
+					placeholder='Your post...'
 					validate={null}
 				/>
 				<button>Add Post</button>
