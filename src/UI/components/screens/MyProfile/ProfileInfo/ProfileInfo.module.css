@@ -1,0 +1,48 @@
+.myProfileInfo {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.profileImage {
+  position: absolute;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 130px;
+  background: rgb(254, 254, 254); 
+  border-radius: 150px;
+}
+
+.profileImage img {
+  width: 120px;
+  height: 120px;
+}
+
+.infoWrapper {
+  width: 100%;
+  display: flex;
+  background: rgb(255, 255, 255);
+  justify-content: space-between;
+  flex-grow: 0;
+  height: 100%;
+  padding: 20px 20px 20px 50px;
+  align-items: center;
+  margin-left: 100px;
+  border-radius: 15px;
+}
+
+.info1 h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.info1 {
+  text-align: left;
+}
+
+.info2 p {
+  text-align: right;
+}

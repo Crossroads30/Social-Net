@@ -1,0 +1,12 @@
+.socialList {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.socialList li:not(:last-child) {
+  margin-right: 3px;
+}
+
+.socialList img {
+  width: 28px;
+}
