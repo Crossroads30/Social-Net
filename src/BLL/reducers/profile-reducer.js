@@ -5,6 +5,7 @@ const ADD_POST = 'profile/ADD_POST'
     posts: [
       {id:1, postMessage:'Hello everybody!', likes: 2},
       {id:2, postMessage:"I'm trying really hard and I hope it's worth it!!!", likes: 12},
+      {id:3, postMessage:"Finally i will manage it!", likes: 12},
     ]
   }
 
