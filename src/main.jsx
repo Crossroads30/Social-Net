@@ -7,11 +7,9 @@ import AppContainer from './AppContainer.jsx'
 import store from './BLL/store.js'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-	<React.StrictMode>
 		<HashRouter>
 			<Provider store={store}>
 				<AppContainer />
 			</Provider>
 		</HashRouter>
-	</React.StrictMode>
 )
