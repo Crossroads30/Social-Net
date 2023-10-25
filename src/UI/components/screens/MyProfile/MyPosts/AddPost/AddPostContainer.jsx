@@ -1,22 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
+import AddPost from './AddPost'
 
 class AddPostContainer extends React.Component {
-	componentDidMount() {
-    
-  }
+	componentDidMount() {}
 
-	render() { 
-return 
- }
-}
-
-const mapStateToProps = state => {
-	return {
-
+	render() {
+		return <AddPost />
 	}
 }
 
-export default connect(mapStateToProps, {
-})(AddPostContainer)
+const mapStateToProps = state => {
+	return {}
+}
+
+export default connect(mapStateToProps, {})(AddPostContainer)
