@@ -1,5 +1,5 @@
 import { Field } from "redux-form"
-import { FormElement } from "./FormControls"
+import { FormElement } from "./FormElement"
 
 export const createField = (
 	className,
