@@ -1,9 +1,10 @@
 import cl from './MyProfile.module.css'
+import ProfileInfoContainer from './ProfileInfo/ProfileInfoContainer'
 
 const MyProfile = () => {
 	return (
-		<div>
-			<b>My profile</b>
+		<div className={cl.myProfileWrapper}>
+			<ProfileInfoContainer />
 		</div>
 	)
 }
