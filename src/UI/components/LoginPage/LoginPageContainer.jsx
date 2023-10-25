@@ -12,11 +12,8 @@ return
  }
 }
 
-const setStateToProps = state => {
-	return {
-
-	}
+const mapStateToProps = state => {
+	return {}
 }
 
-export default connect(setStateToProps, {
-})(LoginPageContainer)
+export default connect(mapStateToProps, {})(LoginPageContainer)

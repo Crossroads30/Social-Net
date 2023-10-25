@@ -10,8 +10,8 @@ class MessagesContainer extends React.Component {
 	}
 }
 
-const setStateToProps = state => {
+const mapStateToProps = state => {
 	return {}
 }
 
-export default connect(setStateToProps, {})(MessagesContainer)
+export default connect(mapStateToProps, {})(MessagesContainer)

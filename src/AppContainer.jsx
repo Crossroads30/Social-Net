@@ -10,9 +10,8 @@ class AppContainer extends React.Component {
 	}
 }
 
-const setStateToProps = state => {
+const mapStateToProps = state => {
 	return {}
 }
 
-export default connect(setStateToProps, {
-})(AppContainer)
+export default connect(mapStateToProps, {})(AppContainer)

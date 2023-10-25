@@ -10,8 +10,8 @@ class FriendsContainer extends React.Component {
 	}
 }
 
-const setStateToProps = state => {
+const mapStateToProps = state => {
 	return {}
 }
 
-export default connect(setStateToProps, {})(FriendsContainer)
+export default connect(mapStateToProps, {})(FriendsContainer)

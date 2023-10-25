@@ -10,8 +10,8 @@ class MyProfileContainer extends React.Component {
 	}
 }
 
-const setStateToProps = state => {
+const mapStateToProps = state => {
 	return {}
 }
 
-export default connect(setStateToProps, {})(MyProfileContainer)
+export default connect(mapStateToProps, {})(MyProfileContainer)

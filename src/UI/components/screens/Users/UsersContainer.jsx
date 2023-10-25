@@ -10,8 +10,8 @@ class UsersContainer extends React.Component {
 	}
 }
 
-const setStateToProps = state => {
+const mapStateToProps = state => {
 	return {}
 }
 
-export default connect(setStateToProps, {})(UsersContainer)
+export default connect(mapStateToProps, {})(UsersContainer)

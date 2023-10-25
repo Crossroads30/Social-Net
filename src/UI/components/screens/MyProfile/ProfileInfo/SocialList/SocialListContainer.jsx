@@ -10,8 +10,8 @@ class SocialListContainer extends React.Component {
 	}
 }
 
-const setStateToProps = state => {
+const mapStateToProps = state => {
 	return {}
 }
 
-export default connect(setStateToProps, {})(SocialListContainer)
+export default connect(mapStateToProps, {})(SocialListContainer)

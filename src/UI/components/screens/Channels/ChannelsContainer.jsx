@@ -10,8 +10,8 @@ class ChannelsContainer extends React.Component {
 	}
 }
 
-const setStateToProps = state => {
+const mapStateToProps = state => {
 	return {}
 }
 
-export default connect(setStateToProps, {})(ChannelsContainer)
+export default connect(mapStateToProps, {})(ChannelsContainer)
