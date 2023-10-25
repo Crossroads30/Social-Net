@@ -29,8 +29,8 @@ const NavMenu = () => {
 					</NavLink>
 				</li>
 				<li>
-					<NavLink className={navData => (navData.isActive ? cl.active : cl.link)} to='/arcade'>
-						Arcade
+					<NavLink className={navData => (navData.isActive ? cl.active : cl.link)} to='/users'>
+						Users
 					</NavLink>
 				</li>
 				<li>
