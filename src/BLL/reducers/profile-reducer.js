@@ -12,12 +12,14 @@ const ADD_POST = 'profile/ADD_POST'
 const profileReducer = (state = initialState, action) => {
   switch (action.type) {
 		case ADD_POST:
-			const newPost = {
-				id: 1,
+			let newPost = {
+				id: state.posts.length + 1,
+				message: action.newPostMessage,
+				likes: 0,
 			}
 			return {
 				...state,
-				posts: [...state.posts, newPostMessageBody],
+				posts: [...state.posts, newPost],
 			}
 		default:
 			return state
@@ -25,9 +27,9 @@ const profileReducer = (state = initialState, action) => {
 }
 
 //actionCreators:
-export const addPost = newPostMessageBody => ({
+export const addPost = newPostMessage => ({
 	type: ADD_POST,
-	newPostMessageBody,
+	newPostMessage,
 })
 
 export default profileReducer
