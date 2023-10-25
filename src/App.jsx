@@ -1,64 +1,32 @@
-import { Route, Routes } from 'react-router-dom'
-import Chat from './UI/components/Chat/Chat'
-import Sidebar from './UI/components/Sidebar/SideBar'
 import './styles/App.css'
-import React, { lazy, Suspense } from 'react'
-import MyProfile from './UI/components/screens/MyProfile/MyProfile'
-import MyProfileContainer from './UI/components/screens/MyProfile/MyProfileContainer'
-import FriendsContainer from './UI/components/screens/Friends/FriendsContainer'
-import MessagesContainer from './UI/components/screens/Messages/MessagesContainer'
-import UsersContainer from './UI/components/screens/Users/UsersContainer'
-import ChannelsContainer from './UI/components/screens/Channels/ChannelsContainer'
+import { Route, Routes } from 'react-router-dom'
+import React, { lazy } from 'react'
+import { withSuspense } from './HOC/withSuspense'
+import Sidebar from './UI/components/Sidebar/SideBar'
+import Chat from './UI/components/Chat/Chat'
 
-// const MyProfileContainer = lazy(() => import('./UI/components/screens/MyProfile/MyProfile'))
+const MyProfileContainer = lazy(() => import('./UI/components/screens/MyProfile/MyProfile'))
+const MessagesContainer = lazy(() => import('./UI/components/screens/Messages/MessagesContainer'))
+const ChannelsContainer = lazy(() => import('./UI/components/screens/Channels/ChannelsContainer'))
+const FriendsContainer = lazy(() => import('./UI/components/screens/Friends/FriendsContainer'))
+const UsersContainer = lazy(() => import('./UI/components/screens/Users/UsersContainer'))
+const MyProfileContainerWithSuspense = withSuspense(MyProfileContainer)
+const MessagesContainerWithSuspense = withSuspense(MessagesContainer)
+const ChannelsContainerWithSuspense = withSuspense(ChannelsContainer)
+const FriendsContainerWithSuspense = withSuspense(FriendsContainer)
+const UsersContainerWithSuspense = withSuspense(UsersContainer)
 
 function App() {
 	return (
 		<div className='app-container'>
 			<Sidebar />
 			<main className='main'>
-				MAIN
 				<Routes>
-					<Route
-						path='/my-profile/:userId?'
-						element={
-							<React.Suspense fallback={'Loading...'}>
-								<MyProfileContainer />
-							</React.Suspense>
-						}
-					/>
-					<Route
-						path='my-channels'
-						element={
-							<React.Suspense fallback={'Loading...'}>
-								<ChannelsContainer />
-							</React.Suspense>
-						}
-					/>
-					<Route
-						path='/my-friends'
-						element={
-							<React.Suspense fallback={'Loading...'}>
-								<FriendsContainer />
-							</React.Suspense>
-						}
-					/>
-					<Route
-						path='/messages'
-						element={
-							<React.Suspense fallback={'Loading...'}>
-								<MessagesContainer />
-							</React.Suspense>
-						}
-					/>
-					<Route
-						path='/users'
-						element={
-							<React.Suspense fallback={'Loading...'}>
-								<UsersContainer />
-							</React.Suspense>
-						}
-					/>
+					<Route path='/my-profile/:userId?' element={<MyProfileContainerWithSuspense />} />
+					<Route path='my-channels' element={<ChannelsContainerWithSuspense />} />
+					<Route path='/my-friends' element={<FriendsContainerWithSuspense />} />
+					<Route path='/messages' element={<MessagesContainerWithSuspense />} />
+					<Route path='/users' element={<UsersContainerWithSuspense />} />
 				</Routes>
 			</main>
 			<Chat />
