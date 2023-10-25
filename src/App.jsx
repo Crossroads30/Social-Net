@@ -27,6 +27,7 @@ function App() {
 					<Route path='/my-friends' element={<FriendsContainerWithSuspense />} />
 					<Route path='/messages' element={<MessagesContainerWithSuspense />} />
 					<Route path='/users' element={<UsersContainerWithSuspense />} />
+					<Route exact path='*' element={<h2>404 - Page not found</h2>} />
 				</Routes>
 			</main>
 			<Chat />
