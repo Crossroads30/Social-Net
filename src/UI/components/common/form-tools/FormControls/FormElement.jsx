@@ -1,7 +1,7 @@
 import cl from './FormControls.module.css'
 import classNames from 'classnames'
 
-export const FormElement = ({ input, meta: { touched, error }, ...props }) => {
+ export const FormElement = ({ input, meta: { touched, error }, ...props }) => {
 	const hasError = touched && error
 
 	return (
