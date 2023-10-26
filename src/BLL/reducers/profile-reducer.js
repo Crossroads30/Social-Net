@@ -1,5 +1,6 @@
 
 const ADD_POST = 'profile/ADD_POST'
+const DELETE_POST = 'profile/ADD_POST'
 
   let initialState = {
     posts: [
@@ -21,6 +22,11 @@ const profileReducer = (state = initialState, action) => {
 				...state,
 				posts: [...state.posts, newPost],
 			}
+		case DELETE_POST:
+			return {
+				...state,
+				posts: state.posts.filter(post => post.id !== action.postId),
+			}
 		default:
 			return state
 	}
@@ -30,6 +36,10 @@ const profileReducer = (state = initialState, action) => {
 export const addPost = newPostMessage => ({
 	type: ADD_POST,
 	newPostMessage,
+})
+export const deletePost = postId => ({
+	type: ADD_POST,
+	postId,
 })
 
 export default profileReducer
