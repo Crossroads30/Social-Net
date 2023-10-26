@@ -10,6 +10,7 @@ const Post = ({ text, likes }) => {
 				<p>{text}</p>
 			</div>
 			<div className={cl.likes}>
+				<span className={cl.deletePost}>Delete post</span>
 				<img src={heart} alt='heart' />
 				<span>{likes}</span>
 			</div>
