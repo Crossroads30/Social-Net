@@ -2,13 +2,12 @@ import AddPostContainer from './AddPost/AddPostContainer'
 import cl from './MyPosts.module.css'
 import Post from './Post/Post'
 
-const MyPosts = ({ posts }) => {
+const MyPosts = ({ posts, deletePost }) => {
 	return (
 		<div>
-		<AddPostContainer />
-		{/* <AddPost /> */}
+			<AddPostContainer />
 			{posts.map(post => (
-				<Post text={post.message} likes={post.likes} key={post.id} />
+				<Post postId={post.id} text={post.message} likes={post.likes} key={post.id} deletePost={deletePost} />
 			))}
 		</div>
 	)
