@@ -1,19 +1,20 @@
+import { profileApi } from '../../DAL/api'
 
 const ADD_POST = 'profile/ADD_POST'
 const DELETE_POST = 'profile/DELETE_POST'
 const SET_USER_PROFILE = 'profile/SET_USER_PROFILE'
 
-  let initialState = {
-    posts: [
-      {id:1, message:'Hello everybody!', likes: 2},
-			{id:2, message:"I'm trying really hard and I hope it's worth it!!!", likes: 12},
-      {id:3, message:"Finally i will manage it!", likes: 12},
-    ],
-		userProfile: null,
-  }
+let initialState = {
+	posts: [
+		{ id: 1, message: 'Hello everybody!', likes: 2 },
+		{ id: 2, message: "I'm trying really hard and I hope it's worth it!!!", likes: 12 },
+		{ id: 3, message: 'Finally i will manage it!', likes: 12 },
+	],
+	userProfile: null,
+}
 
 const profileReducer = (state = initialState, action) => {
-  switch (action.type) {
+	switch (action.type) {
 		case ADD_POST:
 			let newPost = {
 				id: state.posts.length + 1,
@@ -53,6 +54,10 @@ export const setUserProfile = userProfile => ({
 	userProfile,
 })
 
+//ThunkCreators:
+export const getUserProfile = profileId => async dispatch => {
+	const response = await profileApi.getProfile(profileId)
+	dispatch(setUserProfile(response.data))
+}
+
 export default profileReducer
-
-
