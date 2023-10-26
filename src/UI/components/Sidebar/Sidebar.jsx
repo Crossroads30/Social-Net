@@ -8,7 +8,7 @@ const Sidebar = () => {
 		<aside className={classNames('box-wrapper', 'box-wrapper1')}>
 			<Header />
 			<NavMenu />
-			<OnlineIndicator />
+			{/* <OnlineIndicator /> */}
 		</aside>
 	)
 }
