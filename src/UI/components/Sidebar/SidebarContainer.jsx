@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Sidebar from './SideBar'
+import Sidebar from './Sidebar' 
 
 class SideBarContainer extends React.Component {
 	componentDidMount() {}
