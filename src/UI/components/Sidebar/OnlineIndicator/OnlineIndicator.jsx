@@ -1,10 +1,10 @@
 import cl from './OnlineIndicator.module.css'
 
-const OnlineIndicator = () => {
+const OnlineIndicator = ({ userName }) => {
 	return (
 		<div className={cl.indicator}>
 			<div className={cl.indicatorBlock}>
-				<span>User Name</span>
+				<span>{userName}</span>
 				<span>Online</span>
 			</div>
 		</div>
