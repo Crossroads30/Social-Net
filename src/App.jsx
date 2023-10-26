@@ -2,7 +2,7 @@ import './styles/App.css'
 import { Route, Routes } from 'react-router-dom'
 import React, { lazy } from 'react'
 import { withSuspense } from './HOC/withSuspense'
-import Sidebar from './UI/components/Sidebar/SideBar'
+import Sidebar from './UI/components/Sidebar/Sidebar'
 import Chat from './UI/components/Chat/Chat'
 
 const MyProfileContainer = lazy(() => import('./UI/components/screens/MyProfile/MyProfile'))
