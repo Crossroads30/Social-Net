@@ -1,6 +1,6 @@
 
 const ADD_POST = 'profile/ADD_POST'
-const DELETE_POST = 'profile/ADD_POST'
+const DELETE_POST = 'profile/DELETE_POST'
 
   let initialState = {
     posts: [
@@ -38,7 +38,7 @@ export const addPost = newPostMessage => ({
 	newPostMessage,
 })
 export const deletePost = postId => ({
-	type: ADD_POST,
+	type: DELETE_POST,
 	postId,
 })
 
