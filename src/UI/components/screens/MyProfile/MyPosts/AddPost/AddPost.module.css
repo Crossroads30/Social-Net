@@ -8,5 +8,8 @@
 .newPostText {
   width: 100%;
   height: 100px;
-  margin-bottom: 50px;
+}
+
+.newPostTextWrapper button {
+  margin-top: 30px;
 }
