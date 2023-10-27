@@ -10,9 +10,12 @@ const instance = axios.create({
 
 export const profileApi = {
 	async getProfile(profileId) {
-    return await instance.get('/profile/' +  profileId)
-  },
+		return await instance.get('/profile/' + profileId)
+	},
 	async getStatus(profileId) {
-    return await instance.get('/profile/status/' + profileId)
-  },
+		return await instance.get('/profile/status/' + profileId)
+	},
+	async updateStatus(status) {
+		return await instance.put('/profile/status', { status })
+	},
 }
