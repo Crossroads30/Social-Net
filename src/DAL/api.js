@@ -12,4 +12,7 @@ export const profileApi = {
 	async getProfile(profileId) {
     return await instance.get('/profile/' +  profileId)
   },
+	async getStatus(profileId) {
+    return await instance.get('/profile/status/' + profileId)
+  },
 }
