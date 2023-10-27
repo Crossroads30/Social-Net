@@ -1,11 +1,33 @@
+import { useState } from 'react'
 import cl from './About.module.css'
+import classNames from 'classnames'
 
 const About = ({ userProfile }) => {
+
+	const [about, setAbout] = useState(false)
+
+	const openAbout = () => {
+		setAbout(true)
+	}
+	const closeAbout = () => {
+		setAbout(false)
+	}
+
 	return (
 		<>
 			{}
 			<div className={cl.aboutWrapper}>
-				<div className={cl.aboutInfoWrapper}>
+				<div
+					className={
+						!about
+							? cl.aboutInfoWrapper
+							: classNames(cl.aboutInfoWrapper, cl.aboutInfoWrapperActive)
+					}
+				>
+					<div>
+						<div onClick={closeAbout} className={cl.close}></div>
+					</div>
+
 					<div className={cl.aboutMeInfo}>
 						<p>About me:</p>
 						<span>{userProfile.aboutMe}</span>
@@ -21,7 +43,9 @@ const About = ({ userProfile }) => {
 						</div>
 					</div>
 				</div>
-				<span className={cl.aboutButton}>About</span>
+				<span onClick={openAbout} className={cl.aboutButton}>
+					About
+				</span>
 			</div>
 		</>
 	)
