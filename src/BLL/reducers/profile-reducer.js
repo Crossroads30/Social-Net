@@ -74,5 +74,9 @@ export const getUserStatus = profileId => async dispatch => {
 	const response = await profileApi.getStatus(profileId)
 	dispatch(setUserStatus(response.data))
 }
+export const getUpdateUserStatus = userStatus => async dispatch => {
+	const response = await profileApi.updateStatus(userStatus)
+	response.data.resultCode === 0 && dispatch(setUserStatus(userStatus))
+}
 
 export default profileReducer
