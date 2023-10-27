@@ -22,7 +22,7 @@ const UserStatus = ({ userStatus, updateStatus }) => {
 
 	return (
 		<div className={cl.status}>
-			{!editStatus && <p onDoubleClick={activateEditStatus}>{userStatus || 'No Status'}</p>}
+			{!editStatus && <span>{userStatus || 'No Status'}</span>}
 			{editStatus && (
 				<input
 					value={newStatus}
@@ -35,6 +35,11 @@ const UserStatus = ({ userStatus, updateStatus }) => {
 						}
 					}}
 				/>
+			)}
+			{!editStatus && (
+				<span className={cl.edit} onClick={activateEditStatus}>
+					Edit
+				</span>
 			)}
 		</div>
 	)
