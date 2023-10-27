@@ -3,7 +3,7 @@ import defaultUserImage from '../../../../../assets/icons/default-user-img.png'
 import SocialListContainer from './SocialList/SocialListContainer'
 import UserStatus from './UserStatus/UserStatus'
 
-const ProfileInfo = ({ userProfile, userStatus }) => {
+const ProfileInfo = ({ userProfile, userStatus, updateStatus }) => {
 	if (!userProfile) {
 		return <div> Loading...</div>
 	}
@@ -18,7 +18,7 @@ const ProfileInfo = ({ userProfile, userStatus }) => {
 			<div className={cl.infoWrapper}>
 				<div className={cl.info1}>
 					<h2>{userProfile.fullName}</h2>
-					<UserStatus userStatus={userStatus} />
+					<UserStatus userStatus={userStatus} updateStatus={updateStatus} />
 				</div>
 				<div className={cl.info2}>
 					<SocialListContainer />

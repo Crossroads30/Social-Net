@@ -1,7 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import ProfileInfo from './ProfileInfo'
-import { getUserProfile, getUserStatus } from '../../../../../BLL/reducers/profile-reducer'
+import {
+	getUserProfile,
+	getUserStatus,
+	getUpdateUserStatus,
+} from '../../../../../BLL/reducers/profile-reducer'
 import { compose } from 'redux'
 import { withRouter } from '../../../../../HOOKS/withRouter'
 
@@ -16,7 +20,13 @@ class ProfileInfoContainer extends React.Component {
 	}
 
 	render() {
-		return <ProfileInfo userProfile={this.props.userProfile} userStatus={this.props.userStatus} />
+		return (
+			<ProfileInfo
+				userProfile={this.props.userProfile}
+				userStatus={this.props.userStatus}
+				updateStatus={this.props.getUpdateUserStatus}
+			/>
+		)
 	}
 }
 
@@ -28,6 +38,6 @@ const mapStateToProps = state => {
 }
 
 export default compose(
-	connect(mapStateToProps, { getUserProfile, getUserStatus }),
+	connect(mapStateToProps, { getUserProfile, getUserStatus, getUpdateUserStatus }),
 	withRouter
 )(ProfileInfoContainer)
