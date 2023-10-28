@@ -36,7 +36,6 @@ const ProfileInfo = ({ userProfile, userStatus, updateStatus, userLocation, work
 							userLocation={userLocation}
 							workAt={workAt}
 						/>
-						<p>logout</p>
 					</div>
 				</div>
 			</div>
