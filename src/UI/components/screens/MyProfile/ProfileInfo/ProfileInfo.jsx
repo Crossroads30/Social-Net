@@ -23,7 +23,7 @@ const ProfileInfo = ({ userProfile, userStatus, updateStatus, userLocation, work
 						<UserStatus userStatus={userStatus} updateStatus={updateStatus} />
 					</div>
 					<div className={cl.info2}>
-						<SocialList userProfile={userProfile} />
+						<SocialList userProfile={userProfile} userLocation={userLocation} workAt={workAt} />
 						<p>logout</p>
 					</div>
 				</div>
