@@ -5,7 +5,14 @@ import UserStatus from './UserStatus/UserStatus'
 import About from './About/About'
 import EditSocialList from './SocialList/EditSocialList'
 
-const ProfileInfo = ({ userProfile, userStatus, updateStatus, userLocation, workAt }) => {
+const ProfileInfo = ({
+	userProfile,
+	userStatus,
+	updateStatus,
+	userLocation,
+	workAt,
+	getUpdateUserProfile,
+}) => {
 	if (!userProfile) {
 		return <div> Loading...</div>
 	}
@@ -32,9 +39,8 @@ const ProfileInfo = ({ userProfile, userStatus, updateStatus, userLocation, work
 					</div>
 					<div className={cl.info2}>
 						<EditSocialList
+							getUpdateUserProfile={getUpdateUserProfile}
 							userProfile={userProfile}
-							userLocation={userLocation}
-							workAt={workAt}
 						/>
 					</div>
 				</div>
