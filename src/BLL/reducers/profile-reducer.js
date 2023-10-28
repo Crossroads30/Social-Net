@@ -1,10 +1,10 @@
+import { stopSubmit } from 'redux-form'
 import { profileApi } from '../../DAL/api'
 
 const ADD_POST = 'profile/ADD_POST'
 const DELETE_POST = 'profile/DELETE_POST'
 const SET_USER_PROFILE = 'profile/SET_USER_PROFILE'
 const SET_USER_STATUS = 'profile/SET_USER_STATUS'
-const UPDATE_USER_PROFILE = 'profile/UPDATE_USER_PROFILE'
 
 let initialState = {
 	posts: [
@@ -49,11 +49,6 @@ const profileReducer = (state = initialState, action) => {
 				...state,
 				userStatus: action.userStatus,
 			}
-		case UPDATE_USER_PROFILE:
-			return {
-				...state,
-				updateUserProfile: action.updateUserProfile,
-			}
 		default:
 			return state
 	}
@@ -75,10 +70,6 @@ export const setUserProfile = userProfile => ({
 export const setUserStatus = userStatus => ({
 	type: SET_USER_STATUS,
 	userStatus,
-})
-export const updateUserProfile = userProfile => ({
-	type: UPDATE_USER_PROFILE,
-	userProfile,
 })
 
 //ThunkCreators:
@@ -103,21 +94,24 @@ export const getUserStatus = profileId => async dispatch => {
 export const getUpdateUserStatus = userStatus => async dispatch => {
 	try {
 		const response = await profileApi.updateStatus(userStatus)
-		response.data.resultCode === 0 &&
-			dispatch(setUserStatus(userStatus))
+		response.data.resultCode === 0 && dispatch(getUserProfile(userStatus))
 	} catch (error) {
 		console.log(error)
 	}
 }
 
-export const getUpdateUserProfile = userProfile => async dispatch => {
-	try {
+export const getUpdateUserProfile = userProfile => async (dispatch, getState) => {
+		const userId = 30064
 		const response = await profileApi.updateProfile(userProfile)
-		response.data.resultCode === 0 &&
-			dispatch(setUserStatus(userProfile))
-	} catch (error) {
-		console.log(error)
+		if (response.data.resultCode === 0) {
+			dispatch(getUserProfile(userId))
+		}
+		// } else {
+		// 	dispatch(
+		// 		stopSubmit('edit-social', { _error: response.data.messages })
+		// 	)
+		// 	return Promise.reject(response.data.messages)
+		// }
 	}
-}
 
 export default profileReducer
