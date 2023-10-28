@@ -37,11 +37,13 @@
 }
 
 .deletePost {
+	display: none;
 	padding: 2px 5px;
 	border: 1px solid;
 	font-size: 12px;
 	margin-right: 5px;
 	cursor: pointer;
+	color: rgb(55, 174, 249);
 }
 
 .deletePost:hover {
@@ -50,4 +52,8 @@
 
 .deletePost:active {
 	background: rgb(229, 139, 139);
+}
+
+.postWrapper:hover .deletePost {
+display: block;
 }
