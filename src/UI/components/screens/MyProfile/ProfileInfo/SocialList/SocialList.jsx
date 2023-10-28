@@ -9,30 +9,36 @@ import website from '../../../../../../assets/icons/icons8-web-48.png'
 import vk from '../../../../../../assets/icons/icons8-vk-48.png'
 import mainLink from '../../../../../../assets/icons/icons8-link-48.png'
 import { useMemo } from 'react'
+import { EditSocialReduxForm } from '../EditProfileInfoForms/EditSocialForm'
 
-const SocialList = ({ userProfile }) => {
+const SocialList = ({ userProfile, userLocation, workAt }) => {
 	return (
 		<>
 			<ul className={cl.socialList}>
 				{/* for preventing a dabble rendering  use 'useMemo()' method */}
 				{useMemo(() => {
-					return Object.entries(userProfile.contacts).map(([key, value]) => {
-						return (
-							<li key={key}>
-								<div>
-									<a href={`http://${value}`}>
-										{/* for string(from 'key') to variable(import name) use 'eval() method!!!' */}
-										<img src={eval(key)} alt={key} />
-									</a>
-								</div>
-							</li>
-						)
-					})
+					return Object.entries(userProfile.contacts).map(
+						([key, value]) => {
+							return (
+								<li key={key}>
+									<div>
+										<a href={`http://${value}`}>
+											{/* for string(from 'key') to variable(import name) use 'eval() method!!!' */}
+											<img src={eval(key)} alt={key} />
+										</a>
+									</div>
+								</li>
+							)
+						}
+					)
 				})}
 			</ul>
-			<span className='edit'>
-				Edit
-			</span>
+			<span className='edit'>Edit</span>
+			<EditSocialReduxForm
+				userProfile={userProfile}
+				userLocation={userLocation}
+				workAt={workAt}
+			/>
 		</>
 	)
 }
