@@ -23,7 +23,7 @@ const ProfileInfo = ({ userProfile, userStatus, updateStatus }) => {
 						<UserStatus userStatus={userStatus} updateStatus={updateStatus} />
 					</div>
 					<div className={cl.info2}>
-						<SocialListContainer />
+						<SocialListContainer userProfile={userProfile} />
 						<p>logout</p>
 					</div>
 				</div>
