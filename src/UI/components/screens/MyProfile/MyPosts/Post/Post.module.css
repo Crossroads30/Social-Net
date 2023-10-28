@@ -15,6 +15,7 @@
 .post img {
 	width: 45px;
 	margin-right: 10px;
+	border-radius: 50px;
 }
 
 .likes {
