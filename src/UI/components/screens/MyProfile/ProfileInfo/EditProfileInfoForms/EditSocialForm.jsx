@@ -5,13 +5,19 @@ import {
 	maxLengthCreator,
 	required,
 } from '../../../../common/form-tools/validators/validators'
+import CloseButton from '../../../../common/buttons/CloseButton'
 
 const maxLength20 = maxLengthCreator(20)
 
-const EditSocialForm = ({ handleSubmit, userProfile, error }) => {
-
+const EditSocialForm = ({
+	handleSubmit,
+	userProfile,
+	error,
+	closeWindow,
+}) => {
 	return (
 		<div className={cl.socialForm}>
+			<CloseButton closeWindow={closeWindow} />
 			<form onSubmit={handleSubmit}>
 				<ul className={cl.socials}>
 					{Object.keys(userProfile.contacts).map(key => {
