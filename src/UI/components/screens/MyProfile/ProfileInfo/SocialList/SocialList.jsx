@@ -9,9 +9,9 @@ import website from '../../../../../../assets/icons/icons8-web-48.png'
 import vk from '../../../../../../assets/icons/icons8-vk-48.png'
 import mainLink from '../../../../../../assets/icons/icons8-link-48.png'
 import { useMemo } from 'react'
-import { EditSocialReduxForm } from '../EditProfileInfoForms/EditSocialForm'
+import EditButton from '../../../../common/buttons/EditButton'
 
-const SocialList = ({ userProfile, userLocation, workAt }) => {
+const SocialList = ({ userProfile, goToEditMode }) => {
 	return (
 		<>
 			<ul className={cl.socialList}>
@@ -33,12 +33,7 @@ const SocialList = ({ userProfile, userLocation, workAt }) => {
 					)
 				})}
 			</ul>
-			<span className='edit'>Edit</span>
-			<EditSocialReduxForm
-				userProfile={userProfile}
-				userLocation={userLocation}
-				workAt={workAt}
-			/>
+			<EditButton goToEditMode={goToEditMode} />
 		</>
 	)
 }
