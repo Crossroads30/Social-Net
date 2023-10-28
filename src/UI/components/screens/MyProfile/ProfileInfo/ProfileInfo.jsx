@@ -4,7 +4,7 @@ import SocialList from './SocialList/SocialList'
 import UserStatus from './UserStatus/UserStatus'
 import About from './About/About'
 
-const ProfileInfo = ({ userProfile, userStatus, updateStatus }) => {
+const ProfileInfo = ({ userProfile, userStatus, updateStatus, userLocation, workAt }) => {
 	if (!userProfile) {
 		return <div> Loading...</div>
 	}
@@ -28,7 +28,7 @@ const ProfileInfo = ({ userProfile, userStatus, updateStatus }) => {
 					</div>
 				</div>
 			</div>
-			<About userProfile={userProfile} />
+			<About userProfile={userProfile} userLocation={userLocation} workAt={workAt} />
 		</>
 	)
 }

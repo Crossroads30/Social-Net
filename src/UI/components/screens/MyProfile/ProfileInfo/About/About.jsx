@@ -2,8 +2,7 @@ import { useState } from 'react'
 import cl from './About.module.css'
 import classNames from 'classnames'
 
-const About = ({ userProfile }) => {
-
+const About = ({ userProfile, userLocation, workAt }) => {
 	const [about, setAbout] = useState(false)
 
 	const openAbout = () => {
@@ -35,11 +34,11 @@ const About = ({ userProfile }) => {
 						<span>{userProfile.lookingForAJobDescription}</span>
 						<div className={cl.location}>
 							<span></span>
-							<p>Minsk, Belarus</p>
+							<p>{userLocation}</p>
 						</div>
 						<div className={cl.job}>
 							<span></span>
-							<p> Work in "Altoros"</p>
+							<p>{workAt}</p>
 						</div>
 					</div>
 				</div>

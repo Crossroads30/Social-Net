@@ -25,6 +25,8 @@ class ProfileInfoContainer extends React.Component {
 				userProfile={this.props.userProfile}
 				userStatus={this.props.userStatus}
 				updateStatus={this.props.getUpdateUserStatus}
+				userLocation={this.props.userLocation}
+				workAt={this.props.workAt}
 			/>
 		)
 	}
@@ -34,6 +36,8 @@ const mapStateToProps = state => {
 	return {
 		userProfile: state.profilePage.userProfile,
 		userStatus: state.profilePage.userStatus,
+		userLocation: state.profilePage.UserLocation,
+		workAt: state.profilePage.workAt,
 	}
 }
 
