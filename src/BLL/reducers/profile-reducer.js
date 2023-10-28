@@ -13,6 +13,8 @@ let initialState = {
 	],
 	userProfile: null,
 	userStatus: '',
+	UserLocation: 'Minsk, Belarus',
+	workAt: 'Altoros',
 }
 
 const profileReducer = (state = initialState, action) => {
