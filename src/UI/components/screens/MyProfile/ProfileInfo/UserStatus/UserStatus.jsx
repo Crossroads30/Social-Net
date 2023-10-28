@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import cl from './UserStatus.module.css'
+import EditButton from '../../../../common/buttons/EditButton'
 
 const UserStatus = ({ userStatus, updateStatus }) => {
 	let [editStatus, setEditStatus] = useState(false)
@@ -37,12 +38,17 @@ const UserStatus = ({ userStatus, updateStatus }) => {
 				/>
 			)}
 			{!editStatus && (
-				<span className='edit' onClick={activateEditStatus}>
-					Edit
-				</span>
+					<EditButton goToEditMode={activateEditStatus} />
 			)}
 		</div>
 	)
 }
 
 export default UserStatus
+
+				{
+					/* <span className='edit-btn' onClick={activateEditStatus}>
+					Edit
+				</span> */
+				}
+				{/* <EditButton  />} */}
