@@ -3,7 +3,6 @@ import cl from './EditProfileInfoForms.module.css'
 import { createField } from '../../../../common/form-tools/FormControls/CreateField'
 import {
 	maxLengthCreator,
-	required,
 } from '../../../../common/form-tools/validators/validators'
 import CloseButton from '../../../../common/buttons/CloseButton'
 import SubmitButton from '../../../../common/buttons/SubmitButton'
