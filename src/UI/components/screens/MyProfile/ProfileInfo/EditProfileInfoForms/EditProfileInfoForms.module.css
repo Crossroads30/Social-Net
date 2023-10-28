@@ -1,0 +1,18 @@
+.socialForm {
+  padding: 0 10px 10px;
+  border: 1px solid;
+}
+
+.socials li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+.formSummaryError {
+  	color: red;
+	padding: 10px;
+	border: 1px solid red;
+	margin-top: 20px;
+	width: 185px;
+}
