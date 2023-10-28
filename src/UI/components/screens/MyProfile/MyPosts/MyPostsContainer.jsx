@@ -7,13 +7,20 @@ class MyPostsContainer extends React.Component {
 	componentDidMount() {}
 
 	render() {
-		return <MyPosts posts={this.props.posts} deletePost={this.props.deletePost} />
+		return (
+			<MyPosts
+				posts={this.props.posts}
+				deletePost={this.props.deletePost}
+				photo={this.props.photo}
+			/>
+		)
 	}
 }
 
 const mapStateToProps = state => {
 	return {
 		posts: state.profilePage.posts,
+		photo: state.profilePage.userProfile.photos.small
 	}
 }
 
