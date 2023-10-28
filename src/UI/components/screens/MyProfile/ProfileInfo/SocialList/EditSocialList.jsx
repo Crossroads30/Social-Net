@@ -10,11 +10,15 @@ const EditSocialList = ({ userProfile }) => {
 	const activateSocialEdit = () => {
 		setEditSocial(true)
 	}
+	const deactivateSocialEdit = () => {
+		setEditSocial(false)
+	}
 
 	return (
 		<>
 			{editSocial ? (
 				<EditSocialReduxForm
+					closeWindow={deactivateSocialEdit}
 					userProfile={userProfile}
 				/>
 			) : (
