@@ -37,7 +37,7 @@ const UserStatus = ({ userStatus, updateStatus }) => {
 				/>
 			)}
 			{!editStatus && (
-				<span className={cl.edit} onClick={activateEditStatus}>
+				<span className='edit' onClick={activateEditStatus}>
 					Edit
 				</span>
 			)}
