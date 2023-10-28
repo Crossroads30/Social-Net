@@ -18,9 +18,14 @@ class MyPostsContainer extends React.Component {
 }
 
 const mapStateToProps = state => {
-	return {
+	if (state.profilePage.userProfile !== null) {
+		return {
+			posts: state.profilePage.posts,
+			photo: state.profilePage.userProfile.photos.small,
+		}
+	} return {
 		posts: state.profilePage.posts,
-		photo: state.profilePage.userProfile.photos.small
+		photo: null,
 	}
 }
 
