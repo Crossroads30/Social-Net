@@ -19,6 +19,6 @@ export const profileApi = {
 		return await instance.put('/profile/status', { status })
 	},
 	async updateProfile(profile) {
-		return await instance.put('/profile', { profile })
+		return await instance.put('/profile',  profile )
 	},
 }
