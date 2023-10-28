@@ -6,7 +6,10 @@ const Post = ({ postId, text, likes, deletePost, photo }) => {
 	return (
 		<div className={cl.postWrapper}>
 			<div className={cl.post}>
-				<img src={!photo ? defaultUserPhoto : photo} alt='' />
+				<img
+					src={!photo || photo === null || photo === undefined ? defaultUserPhoto : photo}
+					alt='photo'
+				/>
 				<p>{text}</p>
 			</div>
 			<div className={cl.likes}>
