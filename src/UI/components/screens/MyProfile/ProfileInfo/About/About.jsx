@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import cl from './About.module.css'
 import classNames from 'classnames'
+import CloseButton from '../../../../common/buttons/CloseButton'
 
 const About = ({ userProfile, userLocation, workAt }) => {
 	const [about, setAbout] = useState(false)
@@ -8,7 +9,7 @@ const About = ({ userProfile, userLocation, workAt }) => {
 	const openAbout = () => {
 		setAbout(true)
 	}
-	const closeAbout = () => {
+	const closeWindow = () => {
 		setAbout(false)
 	}
 
@@ -20,11 +21,14 @@ const About = ({ userProfile, userLocation, workAt }) => {
 					className={
 						!about
 							? cl.aboutInfoWrapper
-							: classNames(cl.aboutInfoWrapper, cl.aboutInfoWrapperActive)
+							: classNames(
+									cl.aboutInfoWrapper,
+									cl.aboutInfoWrapperActive
+							  )
 					}
 				>
-					<div>
-						<div onClick={closeAbout} className={cl.close}></div>
+					<div className={cl.close}>
+						<CloseButton closeWindow={closeWindow} />
 					</div>
 
 					<div className={cl.aboutMeInfo}>
