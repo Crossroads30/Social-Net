@@ -1,6 +1,6 @@
 import cl from './ProfileInfo.module.css'
 import defaultUserImage from '../../../../../assets/icons/default-user-img.png'
-import SocialListContainer from './SocialList/SocialListContainer'
+import SocialList from './SocialList/SocialList'
 import UserStatus from './UserStatus/UserStatus'
 import About from './About/About'
 
@@ -23,7 +23,7 @@ const ProfileInfo = ({ userProfile, userStatus, updateStatus }) => {
 						<UserStatus userStatus={userStatus} updateStatus={updateStatus} />
 					</div>
 					<div className={cl.info2}>
-						<SocialListContainer userProfile={userProfile} />
+						<SocialList userProfile={userProfile} />
 						<p>logout</p>
 					</div>
 				</div>
