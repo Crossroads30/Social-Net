@@ -6,6 +6,7 @@ import {
 	required,
 } from '../../../../common/form-tools/validators/validators'
 import CloseButton from '../../../../common/buttons/CloseButton'
+import SubmitButton from '../../../../common/buttons/SubmitButton'
 
 const maxLength20 = maxLengthCreator(20)
 
@@ -36,6 +37,7 @@ const EditSocialForm = ({
 						)
 					})}
 				</ul>
+				<SubmitButton name={'Submit'} />
 				{error && <div className={cl.formSummaryError}>{error}</div>}
 			</form>
 		</div>
