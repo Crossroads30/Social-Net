@@ -1,5 +1,5 @@
-const SubmitButton = () => {
-	return <button className='submit-btn'></button>
+const SubmitButton = ({name}) => {
+	return <button className='submit-btn'>{name}</button>
 }
 
 export default SubmitButton
