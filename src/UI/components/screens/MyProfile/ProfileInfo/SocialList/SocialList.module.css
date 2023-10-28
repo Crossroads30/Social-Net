@@ -1,5 +1,5 @@
 .socialList {
-  display: flex;
+  display: inline-flex;
   margin-bottom: 10px;
 }
 

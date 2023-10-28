@@ -12,23 +12,28 @@ import { useMemo } from 'react'
 
 const SocialList = ({ userProfile }) => {
 	return (
-		<ul className={cl.socialList}>
-		{/* for preventing a dabble rendering  use 'useMemo()' method */}
-			{useMemo(() => {
-				return Object.entries(userProfile.contacts).map(([key, value]) => {
-					return (
-						<li key={key}>
-							<div>
-								<a href={`http://${value}`}>
-									{/* for string(from 'key') to variable(import name) use 'eval() method!!!' */}
-									<img src={eval(key)} alt={key} />
-								</a>
-							</div>
-						</li>
-					)
-				})
-			})}
-		</ul>
+		<>
+			<ul className={cl.socialList}>
+				{/* for preventing a dabble rendering  use 'useMemo()' method */}
+				{useMemo(() => {
+					return Object.entries(userProfile.contacts).map(([key, value]) => {
+						return (
+							<li key={key}>
+								<div>
+									<a href={`http://${value}`}>
+										{/* for string(from 'key') to variable(import name) use 'eval() method!!!' */}
+										<img src={eval(key)} alt={key} />
+									</a>
+								</div>
+							</li>
+						)
+					})
+				})}
+			</ul>
+			<span className='edit'>
+				Edit
+			</span>
+		</>
 	)
 }
 
