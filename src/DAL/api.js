@@ -21,4 +21,13 @@ export const profileApi = {
 	async updateProfile(profile) {
 		return await instance.put('/profile',  profile )
 	},
+	async updateProfilePhoto(file) {
+		const formData = new FormData()
+		formData.append('image', file)
+		return await instance.put('/profile/photo', formData, {
+			headers: {
+				'Content-Type': 'multipart/form-data',
+			}
+		})
+	},
 }
