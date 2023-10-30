@@ -5,7 +5,7 @@ import CloseButton from '../../../../common/buttons/CloseButton'
 import EditButton from '../../../../common/buttons/EditButton'
 import { EditAboutReduxForm } from '../EditProfileInfoForms/EditAboutForm'
 
-const About = ({ userProfile }) => {
+const About = ({ userProfile, getUpdateUserProfile }) => {
 	const [about, setAbout] = useState(false)
 
 	const openAbout = () => {
@@ -23,6 +23,11 @@ const About = ({ userProfile }) => {
 	const closeEditWindow = () => {
 		setEditAbout(false)
 	}
+		const onSubmitEditForm = formData => {
+			getUpdateUserProfile(formData).then(() => {
+				setEditAbout(false)
+			})
+		}
 
 	return (
 		<>
@@ -51,7 +56,14 @@ const About = ({ userProfile }) => {
 							</div>
 						</>
 					)}
-					{editAbout && <EditAboutReduxForm closeEditWindow={closeEditWindow} />}
+					{editAbout && (
+						<EditAboutReduxForm
+							initialValues={userProfile}
+							getUpdateUserProfile={getUpdateUserProfile}
+							closeEditWindow={closeEditWindow}
+							onSubmit={onSubmitEditForm}
+						/>
+					)}
 				</div>
 			</div>
 		</>
