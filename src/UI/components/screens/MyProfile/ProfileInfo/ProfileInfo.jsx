@@ -1,11 +1,9 @@
 import cl from './ProfileInfo.module.css'
-import defaultUserImage from '../../../../../assets/icons/default-user-img.png'
-// import SocialList from './SocialList/SocialList'
 import UserStatus from './UserStatus/UserStatus'
 import About from './About/About'
 import EditSocialList from './SocialList/EditSocialList'
-import EditButton from '../../../common/buttons/EditButton'
 import UserName from './UserName/UserName'
+import Avatar from './Avatar/Avatar'
 
 const ProfileInfo = ({
 	userProfile,
@@ -22,9 +20,7 @@ const ProfileInfo = ({
 	return (
 		<>
 			<div className={cl.myProfileInfo}>
-				<div className={cl.profileImage}>
-					<img src={userProfile.photos.small !== null ? userProfile.photos.small : defaultUserImage} alt='default-user' />
-				</div>
+				<Avatar userProfile={userProfile} />
 				<div className={cl.infoWrapper}>
 					<div className={cl.info1}>
 						<UserName userProfile={userProfile} getUpdateUserProfile={getUpdateUserProfile} />
