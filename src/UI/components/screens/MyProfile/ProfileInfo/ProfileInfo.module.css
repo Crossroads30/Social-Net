@@ -4,6 +4,19 @@
   align-items: center;
 }
 
+.infoWrapper {
+  width: 100%;
+  display: flex;
+  background: rgb(255, 255, 255);
+  justify-content: space-between;
+  flex-grow: 0;
+  height: 100%;
+  padding: 20px 20px 20px 50px;
+  align-items: center;
+  margin-left: 100px;
+  border-radius: 15px;
+}
+
 .profileImage {
   position: absolute;
   left: 0px;
@@ -22,17 +35,23 @@
   border-radius: 100px;
 }
 
-.infoWrapper {
-  width: 100%;
+.photoIcon {
+  position: absolute;
   display: flex;
-  background: rgb(255, 255, 255);
-  justify-content: space-between;
-  flex-grow: 0;
-  height: 100%;
-  padding: 20px 20px 20px 50px;
+  justify-content: center;
   align-items: center;
-  margin-left: 100px;
-  border-radius: 15px;
+  background: rgb(254, 254, 254);
+  top: 70px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.photoIcon img {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 3px;
 }
 
 .info1 h2 {
