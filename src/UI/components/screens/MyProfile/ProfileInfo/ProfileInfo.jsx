@@ -11,8 +11,6 @@ const ProfileInfo = ({
 	userProfile,
 	userStatus,
 	updateStatus,
-	userLocation,
-	workAt,
 	getUpdateUserProfile,
 }) => {
 
@@ -52,8 +50,6 @@ const ProfileInfo = ({
 			</div>
 			<About
 				userProfile={userProfile}
-				userLocation={userLocation}
-				workAt={workAt}
 			/>
 		</>
 	)

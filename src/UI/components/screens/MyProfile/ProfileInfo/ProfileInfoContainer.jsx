@@ -26,8 +26,6 @@ class ProfileInfoContainer extends React.Component {
 				userProfile={this.props.userProfile}
 				userStatus={this.props.userStatus}
 				updateStatus={this.props.getUpdateUserStatus}
-				userLocation={this.props.userLocation}
-				workAt={this.props.workAt}
 				getUpdateUserProfile={this.props.getUpdateUserProfile}
 			/>
 		)
