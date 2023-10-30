@@ -18,7 +18,7 @@ let initialState = {
 	],
 	userProfile: null,
 	userStatus: '',
-	UserLocation: 'Minsk, Belarus',
+	userLocation: 'Minsk, Belarus',
 	workAt: 'Altoros',
 }
 
