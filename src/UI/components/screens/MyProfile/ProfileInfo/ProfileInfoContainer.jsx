@@ -38,7 +38,7 @@ const mapStateToProps = state => {
 	return {
 		userProfile: state.profilePage.userProfile,
 		userStatus: state.profilePage.userStatus,
-		userLocation: state.profilePage.UserLocation,
+		userLocation: state.profilePage.userLocation,
 		workAt: state.profilePage.workAt,
 	}
 }
