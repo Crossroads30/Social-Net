@@ -15,22 +15,27 @@ const About = ({ userProfile, userLocation, workAt }) => {
 
 	return (
 		<>
-			{}
 			<div className={cl.aboutWrapper}>
+				<span
+					onClick={openAbout}
+					className={
+						!about
+							? cl.aboutButton
+							: classNames(cl.aboutButton, cl.aboutButtonDisable)
+					}
+				>
+					About
+				</span>
 				<div
 					className={
 						!about
 							? cl.aboutInfoWrapper
-							: classNames(
-									cl.aboutInfoWrapper,
-									cl.aboutInfoWrapperActive
-							  )
+							: classNames(cl.aboutInfoWrapper, cl.aboutInfoWrapperActive)
 					}
 				>
 					<div className={cl.close}>
 						<CloseButton closeWindow={closeWindow} />
 					</div>
-
 					<div className={cl.aboutMeInfo}>
 						<p>About me:</p>
 						<span>{userProfile.aboutMe}</span>
@@ -46,9 +51,6 @@ const About = ({ userProfile, userLocation, workAt }) => {
 						</div>
 					</div>
 				</div>
-				<span onClick={openAbout} className={cl.aboutButton}>
-					About
-				</span>
 			</div>
 		</>
 	)
