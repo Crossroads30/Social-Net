@@ -1,6 +1,6 @@
 .socialList {
   display: inline-flex;
-  margin-bottom: 10px;
+  align-items: center;
 }
 
 .socialList li:not(:last-child) {
@@ -9,4 +9,9 @@
 
 .socialList img {
   width: 23px;
+}
+
+.social {
+  display: flex;
+  align-items: center;
 }
