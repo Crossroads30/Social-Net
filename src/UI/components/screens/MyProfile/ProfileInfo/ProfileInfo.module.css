@@ -45,13 +45,19 @@
   width: 35px;
   height: 35px;
   border-radius: 50px;
-  cursor: pointer;
 }
 
 .photoIcon img {
   width: 30px;
   height: 30px;
   margin-bottom: 3px;
+}
+
+.photoIcon label {
+cursor: pointer;
+}
+.photoIcon input {
+display: none;
 }
 
 .info1 h2 {
