@@ -13,7 +13,7 @@ import EditButton from '../../../../common/buttons/EditButton'
 
 const SocialList = ({ userProfile, goToEditMode }) => {
 	return (
-		<>
+		<div className={cl.social}>
 			<ul className={cl.socialList}>
 				{/* for preventing a dabble rendering  use 'useMemo()' method */}
 				{useMemo(() => {
@@ -34,7 +34,7 @@ const SocialList = ({ userProfile, goToEditMode }) => {
 				})}
 			</ul>
 			<EditButton goToEditMode={goToEditMode} />
-		</>
+		</div>
 	)
 }
 
