@@ -1,18 +1,30 @@
 .socialForm {
-  padding: 10px;
-  border: 1px solid;
+	padding: 10px;
+	border: 1px solid;
 }
 
 .socials li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 10px;
 }
 .formSummaryError {
-  	color: red;
+	color: red;
 	padding: 10px;
 	border: 1px solid red;
 	margin-top: 20px;
 	width: 185px;
+}
+.userNameForm {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+  margin-bottom: 10px;
+}
+.userNameForm input {
+margin-top: 5px;
+}
+.submit {
+  margin: 0 auto;
 }
