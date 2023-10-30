@@ -6,6 +6,7 @@ import {
 	getUserStatus,
 	getUpdateUserStatus,
 	getUpdateUserProfile,
+	getUserPhotoUpdate,
 } from '../../../../../BLL/reducers/profile-reducer'
 import { compose } from 'redux'
 import { withRouter } from '../../../../../HOOKS/withRouter'
@@ -27,6 +28,7 @@ class ProfileInfoContainer extends React.Component {
 				userStatus={this.props.userStatus}
 				updateStatus={this.props.getUpdateUserStatus}
 				getUpdateUserProfile={this.props.getUpdateUserProfile}
+				getUserPhotoUpdate={this.props.getUserPhotoUpdate}
 			/>
 		)
 	}
@@ -36,8 +38,6 @@ const mapStateToProps = state => {
 	return {
 		userProfile: state.profilePage.userProfile,
 		userStatus: state.profilePage.userStatus,
-		userLocation: state.profilePage.userLocation,
-		workAt: state.profilePage.workAt,
 	}
 }
 
@@ -47,6 +47,7 @@ export default compose(
 		getUserStatus,
 		getUpdateUserStatus,
 		getUpdateUserProfile,
+		getUserPhotoUpdate,
 	}),
 	withRouter
 )(ProfileInfoContainer)
