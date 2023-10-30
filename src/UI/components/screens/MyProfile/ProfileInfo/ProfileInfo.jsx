@@ -5,22 +5,14 @@ import EditSocialList from './SocialList/EditSocialList'
 import UserName from './UserName/UserName'
 import Avatar from './Avatar/Avatar'
 
-const ProfileInfo = ({
-	userProfile,
-	userStatus,
-	updateStatus,
-	getUpdateUserProfile,
-}) => {
-
-
-
+const ProfileInfo = ({ userProfile, userStatus, updateStatus, getUpdateUserProfile, getUserPhotoUpdate }) => {
 	if (!userProfile) {
 		return <div> Loading...</div>
 	}
 	return (
 		<>
 			<div className={cl.myProfileInfo}>
-				<Avatar userProfile={userProfile} />
+				<Avatar userProfile={userProfile} savePhoto={getUserPhotoUpdate} />
 				<div className={cl.infoWrapper}>
 					<div className={cl.info1}>
 						<UserName userProfile={userProfile} getUpdateUserProfile={getUpdateUserProfile} />
