@@ -11,7 +11,6 @@ export const createField = (
 	text = ''
 ) => {
 	return (
-		<div className={className}>
 			<Field
 				placeholder={placeholder}
 				name={name}
@@ -20,7 +19,6 @@ export const createField = (
 				element_type={element_type}
 				{...props}
 			/>
-			{text}
-		</div>
+			// {text}		
 	)
 }
