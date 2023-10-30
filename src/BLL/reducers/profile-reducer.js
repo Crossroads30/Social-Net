@@ -5,6 +5,7 @@ const ADD_POST = 'profile/ADD_POST'
 const DELETE_POST = 'profile/DELETE_POST'
 const SET_USER_PROFILE = 'profile/SET_USER_PROFILE'
 const SET_USER_STATUS = 'profile/SET_USER_STATUS'
+const UPDATE_PHOTO = 'profile/UPDATE_PHOTO'
 
 let initialState = {
 	posts: [
@@ -47,6 +48,11 @@ const profileReducer = (state = initialState, action) => {
 				...state,
 				userStatus: action.userStatus,
 			}
+		case UPDATE_PHOTO:
+			return {
+				...state,
+				userProfile: {...state.userProfile, photos: action.userPhoto},
+			}
 		default:
 			return state
 	}
@@ -68,6 +74,10 @@ export const setUserProfile = userProfile => ({
 export const setUserStatus = userStatus => ({
 	type: SET_USER_STATUS,
 	userStatus,
+})
+export const updateUserPhoto = userPhoto => ({
+	type: SET_USER_STATUS,
+	userPhoto,
 })
 
 //ThunkCreators:
@@ -108,6 +118,15 @@ export const getUpdateUserProfile = userProfile => async (dispatch, getState) =>
 				stopSubmit('edit-social', { _error: response.data.messages })
 			)
 			return Promise.reject(response.data.messages)
+		}
+	}
+
+	export const getUserPhotoUpdate = file => async dispatch => {
+		try {
+			const response = await profileApi.updateProfilePhoto(file)
+			response.data.resultCode === 0 && dispatch(updateUserPhoto(response.data.data.photos))
+		} catch (error) {
+			console.log(error)
 		}
 	}
 
