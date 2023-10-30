@@ -5,6 +5,7 @@ import UserStatus from './UserStatus/UserStatus'
 import About from './About/About'
 import EditSocialList from './SocialList/EditSocialList'
 import EditButton from '../../../common/buttons/EditButton'
+import UserName from './UserName/UserName'
 
 const ProfileInfo = ({
 	userProfile,
@@ -14,6 +15,9 @@ const ProfileInfo = ({
 	workAt,
 	getUpdateUserProfile,
 }) => {
+
+
+
 	if (!userProfile) {
 		return <div> Loading...</div>
 	}
@@ -32,11 +36,11 @@ const ProfileInfo = ({
 				</div>
 				<div className={cl.infoWrapper}>
 					<div className={cl.info1}>
-						<div className={cl.fullName}>
-							<h2>{userProfile.fullName}</h2>
-							<EditButton />
-						</div>
-							<UserStatus userStatus={userStatus} updateStatus={updateStatus} />
+						<UserName
+							userProfile={userProfile}
+							getUpdateUserProfile={getUpdateUserProfile}
+						/>
+						<UserStatus userStatus={userStatus} updateStatus={updateStatus} />
 					</div>
 					<div className={cl.info2}>
 						<EditSocialList
