@@ -76,7 +76,7 @@ export const setUserStatus = userStatus => ({
 	userStatus,
 })
 export const updateUserPhoto = userPhoto => ({
-	type: SET_USER_STATUS,
+	type: UPDATE_PHOTO,
 	userPhoto,
 })
 
@@ -122,12 +122,8 @@ export const getUpdateUserProfile = userProfile => async (dispatch, getState) =>
 	}
 
 	export const getUserPhotoUpdate = file => async dispatch => {
-		try {
 			const response = await profileApi.updateProfilePhoto(file)
 			response.data.resultCode === 0 && dispatch(updateUserPhoto(response.data.data.photos))
-		} catch (error) {
-			console.log(error)
-		}
 	}
 
 export default profileReducer
