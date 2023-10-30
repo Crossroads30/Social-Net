@@ -103,13 +103,12 @@ export const getUpdateUserProfile = userProfile => async (dispatch, getState) =>
 		const response = await profileApi.updateProfile(userProfile)
 		if (response.data.resultCode === 0) {
 			dispatch(getUserProfile(userId))
+		} else {
+			dispatch(
+				stopSubmit('edit-social', { _error: response.data.messages })
+			)
+			return Promise.reject(response.data.messages)
 		}
-		// } else {
-		// 	dispatch(
-		// 		stopSubmit('edit-social', { _error: response.data.messages })
-		// 	)
-		// 	return Promise.reject(response.data.messages)
-		// }
 	}
 
 export default profileReducer
