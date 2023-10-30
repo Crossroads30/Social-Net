@@ -5,17 +5,19 @@
 }
 
 .aboutButton {
-	background: rgb(255, 255, 255);
 	padding: 2px 15px;
 	border-radius: 6px;
 	cursor: pointer;
 	align-self: flex-start;
-	margin-right: 10px;
+	margin-left: 100px;
 	color: rgb(55, 174, 249);
 }
 
 .aboutButton:hover {
-	background: rgb(233, 233, 233);
+	color: rgb(133, 191, 227);
+}
+.aboutButtonDisable {
+	display: none;
 }
 
 .aboutInfoWrapper {
