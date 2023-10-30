@@ -109,3 +109,8 @@
 .job p {
 	color: rgb(82, 175, 175);
 }
+
+.editAbout {
+ display: flex;
+ justify-content: flex-end;
+}
