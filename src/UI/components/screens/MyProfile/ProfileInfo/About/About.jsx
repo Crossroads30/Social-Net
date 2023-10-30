@@ -2,6 +2,7 @@ import { useState } from 'react'
 import cl from './About.module.css'
 import classNames from 'classnames'
 import CloseButton from '../../../../common/buttons/CloseButton'
+import EditButton from '../../../../common/buttons/EditButton'
 
 const About = ({ userProfile, userLocation, workAt }) => {
 	const [about, setAbout] = useState(false)
@@ -49,6 +50,9 @@ const About = ({ userProfile, userLocation, workAt }) => {
 							<span></span>
 							<p>{workAt}</p>
 						</div>
+					</div>
+					<div className={cl.editAbout}>
+						<EditButton />
 					</div>
 				</div>
 			</div>
