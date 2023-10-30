@@ -23,34 +23,19 @@ const ProfileInfo = ({
 		<>
 			<div className={cl.myProfileInfo}>
 				<div className={cl.profileImage}>
-					<img
-						src={
-							userProfile.photos.small !== null
-								? userProfile.photos.small
-								: defaultUserImage
-						}
-						alt='default-user'
-					/>
+					<img src={userProfile.photos.small !== null ? userProfile.photos.small : defaultUserImage} alt='default-user' />
 				</div>
 				<div className={cl.infoWrapper}>
 					<div className={cl.info1}>
-						<UserName
-							userProfile={userProfile}
-							getUpdateUserProfile={getUpdateUserProfile}
-						/>
+						<UserName userProfile={userProfile} getUpdateUserProfile={getUpdateUserProfile} />
 						<UserStatus userStatus={userStatus} updateStatus={updateStatus} />
 					</div>
 					<div className={cl.info2}>
-						<EditSocialList
-							getUpdateUserProfile={getUpdateUserProfile}
-							userProfile={userProfile}
-						/>
+						<EditSocialList getUpdateUserProfile={getUpdateUserProfile} userProfile={userProfile} />
 					</div>
 				</div>
 			</div>
-			<About
-				userProfile={userProfile}
-			/>
+			<About userProfile={userProfile} getUpdateUserProfile={getUpdateUserProfile} />
 		</>
 	)
 }
