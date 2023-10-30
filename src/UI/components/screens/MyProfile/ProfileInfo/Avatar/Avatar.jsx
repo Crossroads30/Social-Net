@@ -12,12 +12,12 @@ const Avatar = ({ userProfile, savePhoto }) => {
 		<>
 			<div className={cl.profileImage}>
 				<img src={userProfile.photos.small !== null ? userProfile.photos.small : defaultUserImage} alt='default-user' />
-			</div>
-			<div className={cl.photoIcon}>
-				<label htmlFor='file-input'>
-					<img src={photoIcon} alt='photo-icon' />
-				</label>
-				<input id='file-input' type={'file'} onChange={onAvatarSelected}></input>
+				<div className={cl.photoIcon}>
+					<label htmlFor='file-input'>
+						<img src={photoIcon} alt='photo-icon' />
+					</label>
+					<input id='file-input' type={'file'} onChange={onAvatarSelected}></input>
+				</div>
 			</div>
 		</>
 	)
