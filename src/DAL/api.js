@@ -31,3 +31,9 @@ export const profileApi = {
 		})
 	},
 }
+
+export const authApi = {
+	async getAuth() {
+		return await instance.get('/auth/me')
+	}
+}
