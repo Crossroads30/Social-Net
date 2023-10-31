@@ -1,5 +1,5 @@
 import { stopSubmit } from 'redux-form'
-import { profileApi } from '../../DAL/api'
+import { authApi } from '../../DAL/api'
 
 const SET_USER_AUTH_DATA = 'auth/SET_USER_AUTH_DATA'
 
@@ -15,7 +15,7 @@ const authReducer = (state = initialState, action) => {
 		case SET_USER_AUTH_DATA:
 			return {
 				...state,
-				data: action.data,
+				...action.data,
 			}
 		default:
 			return state
@@ -23,20 +23,16 @@ const authReducer = (state = initialState, action) => {
 }
 
 //actionCreators:
-export const setUserAuthData = data => ({
+export const setUserAuthData = (id, login, email, isAuth) => ({
 	type: SET_USER_AUTH_DATA,
 	data: { id, login, email, isAuth },
 })
 
 //ThunkCreators:
-export const getIsAuth = () => async dispatch => {
-	try {
+export const getAuthUserData = () => async dispatch => {
 		const response = await authApi.getAuth()
 		const { id, login, email } = response.data.data
 		response.data.resultCode === 0 && dispatch(setUserAuthData(id, login, email, true))
-	} catch (error) {
-		console.log(error)
-	}
 }
 
 export default authReducer
