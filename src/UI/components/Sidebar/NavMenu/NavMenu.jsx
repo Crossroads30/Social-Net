@@ -20,17 +20,12 @@ const NavMenu = () => {
 				</li>
 				<li>
 					<NavLink className={navData => (navData.isActive ? cl.active : cl.link)} to='/my-friends'>
-						My Friends
+						Add Friends
 					</NavLink>
 				</li>
 				<li>
 					<NavLink className={navData => (navData.isActive ? cl.active : cl.link)} to='/messages'>
 						Messages
-					</NavLink>
-				</li>
-				<li>
-					<NavLink className={navData => (navData.isActive ? cl.active : cl.link)} to='/users'>
-						Users
 					</NavLink>
 				</li>
 				<li>
