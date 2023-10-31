@@ -6,17 +6,17 @@ class OnlineIndicatorContainer extends React.Component {
 	componentDidMount() {}
 
 	render() {
-		return <OnlineIndicator userName={this.props.userName} />
+		return <OnlineIndicator loginName={this.props.loginName} />
 	}
 }
 
 const mapStateToProps = state => {
 	if (state.profilePage.userProfile !== null) {
 		return {
-			userName: state.profilePage.userProfile.fullName,
+			loginName: state.auth.login,
 		}
 	} return {
-		userName: 'User Name'
+		loginName: 'User Name',
 	}
 }
 
