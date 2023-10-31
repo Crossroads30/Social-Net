@@ -4,14 +4,12 @@ import { reducer as formReducer } from 'redux-form'
 import { compose } from 'redux'
 import profileReducer from './reducers/profile-reducer'
 import authReducer from './reducers/auth-reducer'
+import appReducer from './reducers/app-reducer'
 
 const reducers = combineReducers({
 	profilePage: profileReducer,
-	// messagesPage: messageReducer,
-	// sidebar: sidebarReducer,
-	// usersPage: usersReducer,
 	auth: authReducer,
-	// app: appReducer,
+	app: appReducer,
 	form: formReducer,
 })
 
