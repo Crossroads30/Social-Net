@@ -1,17 +1,22 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import App from './App'
+import { initializeApp } from './BLL/reducers/app-reducer'
 
 class AppContainer extends React.Component {
-	componentDidMount() {}
+	componentDidMount() {
+		this.props.initializeApp()
+	}
 
 	render() {
-		return <App/>
+		return <App initialized={this.props.initialized} />
 	}
 }
 
 const mapStateToProps = state => {
-	return {}
+	return {
+		initialized: state.app.initialized
+	}
 }
 
-export default connect(mapStateToProps, {})(AppContainer)
+export default connect(mapStateToProps, { initializeApp })(AppContainer)
