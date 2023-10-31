@@ -9,12 +9,11 @@ const MyProfileContainer = lazy(() => import('./UI/components/screens/MyProfile/
 const MessagesContainer = lazy(() => import('./UI/components/screens/Messages/MessagesContainer'))
 const ChannelsContainer = lazy(() => import('./UI/components/screens/Channels/ChannelsContainer'))
 const FriendsContainer = lazy(() => import('./UI/components/screens/Friends/FriendsContainer'))
-const UsersContainer = lazy(() => import('./UI/components/screens/Users/UsersContainer'))
+
 const MyProfileContainerWithSuspense = withSuspense(MyProfileContainer)
 const MessagesContainerWithSuspense = withSuspense(MessagesContainer)
 const ChannelsContainerWithSuspense = withSuspense(ChannelsContainer)
-const FriendsContainerWithSuspense = withSuspense(FriendsContainer)
-const UsersContainerWithSuspense = withSuspense(UsersContainer)
+const FriendsContainerWithSuspense = withSuspense(FriendsContainer) 
 
 function App() {
 	return (
@@ -26,7 +25,6 @@ function App() {
 					<Route path='my-channels' element={<ChannelsContainerWithSuspense />} />
 					<Route path='/my-friends' element={<FriendsContainerWithSuspense />} />
 					<Route path='/messages' element={<MessagesContainerWithSuspense />} />
-					<Route path='/users' element={<UsersContainerWithSuspense />} />
 					<Route exact path='*' element={<h2>404 - Page not found</h2>} />
 				</Routes>
 			</main>
