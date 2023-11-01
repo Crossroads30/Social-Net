@@ -1,17 +1,22 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import MyProfile from './MyProfile'
+import { compose } from 'redux'
+import { withAuthRedirect } from '../../../../HOC/withAuthRedirect'
 
 class MyProfileContainer extends React.Component {
 	componentDidMount() {}
 
 	render() {
-		return <MyProfile />
+		return <MyProfile  />
 	}
 }
 
 const mapStateToProps = state => {
-	return {}
+	return {
+		isAuth: state.auth.isAuth,
+	}
 }
 
-export default connect(mapStateToProps, {})(MyProfileContainer)
+export default compose(connect(mapStateToProps, {}), withAuthRedirect)(MyProfileContainer)
+// connect(mapStateToProps, {})(MyProfileContainer)

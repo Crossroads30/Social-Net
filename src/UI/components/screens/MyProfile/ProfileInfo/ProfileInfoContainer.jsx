@@ -10,6 +10,7 @@ import {
 } from '../../../../../BLL/reducers/profile-reducer'
 import { compose } from 'redux'
 import { withRouter } from '../../../../../HOOKS/withRouter'
+import { withAuthRedirect } from '../../../../../HOC/withAuthRedirect'
 
 class ProfileInfoContainer extends React.Component {
 	refreshProfile() {
@@ -29,6 +30,7 @@ class ProfileInfoContainer extends React.Component {
 	render() {
 		return (
 			<ProfileInfo
+				{...this.props}
 				userProfile={this.props.userProfile}
 				userStatus={this.props.userStatus}
 				updateStatus={this.props.getUpdateUserStatus}
@@ -44,6 +46,7 @@ const mapStateToProps = state => {
 		userProfile: state.profilePage.userProfile,
 		userStatus: state.profilePage.userStatus,
 		mainUserId: state.auth.id,
+		isAuth: state.auth.isAuth,
 	}
 }
 
@@ -55,5 +58,6 @@ export default compose(
 		getUpdateUserProfile,
 		getUserPhotoUpdate,
 	}),
-	withRouter
+	withRouter, 
+	withAuthRedirect
 )(ProfileInfoContainer)
