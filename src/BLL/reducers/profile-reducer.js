@@ -102,7 +102,7 @@ export const getUserStatus = profileId => async dispatch => {
 export const getUpdateUserStatus = userStatus => async dispatch => {
 	try {
 		const response = await profileApi.updateStatus(userStatus)
-		response.data.resultCode === 0 && dispatch(getUserProfile(userStatus))
+		response.data.resultCode === 0 && dispatch(setUserStatus(userStatus))
 	} catch (error) {
 		console.log(error)
 	}
