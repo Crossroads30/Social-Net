@@ -12,15 +12,18 @@ import { compose } from 'redux'
 import { withRouter } from '../../../../../HOOKS/withRouter'
 
 class ProfileInfoContainer extends React.Component {
-	componentDidMount() {
+	refreshProfile() {
 		let profileId = this.props.match.params.userId
 		if (!profileId) {
 			// profileId = 30064
-			profileId=this.props.mainUserId
+			profileId = this.props.mainUserId
 		}
 		this.props.getUserProfile(profileId)
 		this.props.getUserStatus(profileId)
-		
+	}
+
+	componentDidMount() {
+		this.refreshProfile()
 	}
 
 	render() {
@@ -40,7 +43,7 @@ const mapStateToProps = state => {
 	return {
 		userProfile: state.profilePage.userProfile,
 		userStatus: state.profilePage.userStatus,
-		mainUserId : state.auth.id,
+		mainUserId: state.auth.id,
 	}
 }
 
