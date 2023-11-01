@@ -1,9 +1,10 @@
 import cl from './LoginPage.module.css'
+import { LoginPageReduxForm } from './loginPageForm'
 
 const LoginPage = () => {
 	return (
 		<>
-			<div>Login Page</div>
+			<LoginPageReduxForm />
 		</>
 	) 
 }
