@@ -3,7 +3,7 @@ import { getAuthUserData } from './auth-reducer'
 const INITIALIZED_SUCCESS = 'auth/INITIALIZED_SUCCESS'
 
 let initialState = {
-initialized: false,
+	initialized: false,
 }
 
 const authReducer = (state = initialState, action) => {
@@ -25,8 +25,12 @@ export const initializedSuccess = () => ({
 
 //ThunkCreators:
 export const initializeApp = () => async dispatch => {
-	 await dispatch(getAuthUserData())
-	dispatch(initializedSuccess())
+	try {
+		await dispatch(getAuthUserData())
+		dispatch(initializedSuccess())
+	} catch (error) {
+		console.log(error)
+	}
 }
 
 export default authReducer

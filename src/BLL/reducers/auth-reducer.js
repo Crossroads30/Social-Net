@@ -30,9 +30,13 @@ export const setUserAuthData = (id, login, email, isAuth) => ({
 
 //ThunkCreators:
 export const getAuthUserData = () => async dispatch => {
+	try {
 		const response = await authApi.getAuth()
 		const { id, login, email } = response.data.data
 		response.data.resultCode === 0 && dispatch(setUserAuthData(id, login, email, true))
+	} catch (error) {
+		console.log(error)
+	}
 }
 
 export default authReducer
