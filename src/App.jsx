@@ -22,6 +22,7 @@ function App() {
 			<main className='main'>
 				<Routes>
 					<Route path='/my-profile/:userId?' element={<MyProfileContainerWithSuspense />} />
+					<Route path='/' element={<MyProfileContainerWithSuspense />} />
 					<Route path='my-channels' element={<ChannelsContainerWithSuspense />} />
 					<Route path='/my-friends' element={<FriendsContainerWithSuspense />} />
 					<Route path='/messages' element={<MessagesContainerWithSuspense />} />
