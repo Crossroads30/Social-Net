@@ -1,0 +1,21 @@
+.loginForm {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+}
+.loginForm input {
+margin-bottom: 10px;
+}
+.checkbox {
+display: inline-flex;
+}
+.checkbox input {
+margin: 0 5px 3px 0;
+}
+.formSummaryError {
+	color: red;
+	padding: 10px;
+	border: 1px solid red;
+	margin-top: 20px;
+	width: 185px;
+}
