@@ -48,3 +48,9 @@ export const authApi = {
 		return await instance.delete('/auth/login')
 	},
 }
+
+export const securityApi =  {
+		async getCaptchaUrl(url) {
+		return await instance.get('/security/get-captcha-url')
+	}
+}
