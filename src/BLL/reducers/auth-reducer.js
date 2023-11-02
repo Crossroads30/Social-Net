@@ -1,5 +1,5 @@
 import { stopSubmit } from 'redux-form'
-import { authApi } from '../../DAL/api'
+import { authApi, securityApi } from '../../DAL/api'
 
 const SET_USER_AUTH_DATA = 'auth/SET_USER_AUTH_DATA'
 const SET_CAPTCHA_URL_SUCCESS = 'auth/SET_CAPTCHA_URL_SUCCESS'
@@ -9,6 +9,7 @@ let initialState = {
 	login: null,
 	email: null,
 	isAuth: false,
+	captchaUrl: null,
 }
 
 const authReducer = (state = initialState, action) => {
@@ -32,8 +33,8 @@ export const setUserAuthData = (id, login, email, isAuth) => ({
 })
 
 export const setCaptchaUrlSuccess = captchaUrl => ({
-	type: SET_USER_AUTH_DATA,
-	data:{ captchaUrl },
+	type: SET_CAPTCHA_URL_SUCCESS,
+	data: { captchaUrl },
 })
 
 
@@ -55,8 +56,10 @@ export const getLoginToSystem = (email, password, rememberMe, captcha) => async 
 			dispatch(getAuthUserData())
 		} else {
 			if (response.data.resultCode === 10) {
-				dispatch(getCaptchaUrl())
+				dispatch(getCaptchaUrlFromServer())
 			}
+			const message = response.data.messages.length > 0 ? response.data.messages[0] : 'some error'
+			dispatch(stopSubmit('login', { _error: message }))
 		}
 	} catch (error) {
 		console.log(error)
@@ -72,11 +75,11 @@ export const getLogoutFromSystem = () => async dispatch => {
 	}
 }
 
-export const getCaptchaUrl = url => async dispatch => {
+export const getCaptchaUrlFromServer = () => async dispatch => {
 	try {
 		const response = await securityApi.getCaptchaUrl()
 		const captchaUrl = response.data.url
-		response.data.resultCode === 0 && dispatch(setCaptchaUrlSuccess(captchaUrl))
+		dispatch(setCaptchaUrlSuccess(captchaUrl))
 	} catch (error) {
 		console.log(error)
 	}
