@@ -38,5 +38,13 @@ export const getAuthUserData = () => async dispatch => {
 		console.log(error)
 	}
 }
+export const getLoginToSystem = (email, password, rememberMe, captcha) => async dispatch => {
+	try {
+		const response = await authApi.loginToServer(email, password, rememberMe, captcha)
+		response.data.resultCode === 0 && dispatch(getAuthUserData())
+	} catch (error) {
+		console.log(error)
+	}
+}
 
 export default authReducer
