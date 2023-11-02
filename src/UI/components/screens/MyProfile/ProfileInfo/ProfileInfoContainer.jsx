@@ -11,6 +11,7 @@ import {
 import { compose } from 'redux'
 import { withRouter } from '../../../../../HOOKS/withRouter'
 import { withAuthRedirect } from '../../../../../HOC/withAuthRedirect'
+import { getLogoutFromSystem } from '../../../../../BLL/reducers/auth-reducer'
 
 class ProfileInfoContainer extends React.Component {
 	refreshProfile() {
@@ -36,6 +37,7 @@ class ProfileInfoContainer extends React.Component {
 				updateStatus={this.props.getUpdateUserStatus}
 				getUpdateUserProfile={this.props.getUpdateUserProfile}
 				getUserPhotoUpdate={this.props.getUserPhotoUpdate}
+				logout={this.props.getLogoutFromSystem}
 			/>
 		)
 	}
@@ -57,7 +59,8 @@ export default compose(
 		getUpdateUserStatus,
 		getUpdateUserProfile,
 		getUserPhotoUpdate,
+		getLogoutFromSystem,
 	}),
-	withRouter, 
+	withRouter,
 	withAuthRedirect
 )(ProfileInfoContainer)
