@@ -44,4 +44,7 @@ export const authApi = {
 			captcha,
 		})
 	},
+	async logOutFromServer() {
+		return await instance.delete('/auth/login')
+	},
 }
