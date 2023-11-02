@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios'
 
 const instance = axios.create({
 	withCredentials: true,
@@ -19,7 +19,7 @@ export const profileApi = {
 		return await instance.put('/profile/status', { status })
 	},
 	async updateProfile(profile) {
-		return await instance.put('/profile',  profile )
+		return await instance.put('/profile', profile)
 	},
 	async updateProfilePhoto(file) {
 		const formData = new FormData()
@@ -27,7 +27,7 @@ export const profileApi = {
 		return await instance.put('/profile/photo', formData, {
 			headers: {
 				'Content-Type': 'multipart/form-data',
-			}
+			},
 		})
 	},
 }
@@ -35,5 +35,13 @@ export const profileApi = {
 export const authApi = {
 	async getAuth() {
 		return await instance.get('/auth/me')
-	}
+	},
+	async loginToServer(email, password, rememberMe = false, captcha = null) {
+		return await instance.post('/auth/login', {
+			email,
+			password,
+			rememberMe,
+			captcha,
+		})
+	},
 }
