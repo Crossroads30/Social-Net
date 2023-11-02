@@ -1,7 +1,6 @@
 import { Field, reduxForm, reset } from 'redux-form'
 import { FormElement } from '../../../../common/form-tools/FormControls/FormElement'
 import cl from './AddPost.module.css'
-import { required } from '../../../../common/form-tools/validators/validators'
 import SubmitButton from '../../../../common/buttons/SubmitButton'
 
 const AddPostForm = props => {
@@ -14,7 +13,7 @@ const AddPostForm = props => {
 					className={cl.newPostText}
 					name='newPostMessageText'
 					placeholder='Your post...'
-					validate={[required]}
+					validate={[]}
 				/>
 				<SubmitButton name={'Add Post'} />
 			</div>
