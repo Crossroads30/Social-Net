@@ -46,5 +46,13 @@ export const getLoginToSystem = (email, password, rememberMe, captcha) => async 
 		console.log(error)
 	}
 }
+export const getLogoutFromSystem = () => async dispatch => {
+	try {
+		const response = await authApi.logOutFromServer()
+		response.data.resultCode === 0 && dispatch(setUserAuthData(null, null, null, false))
+	} catch (error) {
+		console.log(error)
+	}
+}
 
 export default authReducer
