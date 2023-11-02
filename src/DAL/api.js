@@ -50,7 +50,7 @@ export const authApi = {
 }
 
 export const securityApi =  {
-		async getCaptchaUrl(url) {
+		async getCaptchaUrl() {
 		return await instance.get('/security/get-captcha-url')
 	}
 }
