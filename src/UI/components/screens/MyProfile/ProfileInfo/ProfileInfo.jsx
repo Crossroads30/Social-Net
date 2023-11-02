@@ -6,7 +6,7 @@ import UserName from './UserName/UserName'
 import Avatar from './Avatar/Avatar'
 import { Logout } from '../../../common/buttons/Logout'
 
-const ProfileInfo = ({ userProfile, userStatus, updateStatus, getUpdateUserProfile, getUserPhotoUpdate }) => {
+const ProfileInfo = ({ userProfile, userStatus, updateStatus, getUpdateUserProfile, getUserPhotoUpdate, logout }) => {
 	if (!userProfile) {
 		return <div> Loading...</div>
 	}
@@ -21,7 +21,7 @@ const ProfileInfo = ({ userProfile, userStatus, updateStatus, getUpdateUserProfi
 					</div>
 					<div className={cl.info2}>
 						<EditSocialList getUpdateUserProfile={getUpdateUserProfile} userProfile={userProfile} />
-						<Logout />
+						<Logout logout={logout} />
 					</div>
 				</div>
 			</div>
