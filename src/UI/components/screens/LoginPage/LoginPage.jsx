@@ -2,8 +2,7 @@ import { Navigate } from 'react-router-dom'
 import cl from './LoginPage.module.css'
 import { LoginPageReduxForm } from './loginPageForm'
 
-const LoginPage = ({ login, isAuth }) => {
-
+const LoginPage = ({ login, isAuth, captchaUrl }) => {
 	const addLoginData = formData => {
 		login(formData.email, formData.password, formData.rememberMe, formData.captcha)
 	}
@@ -13,7 +12,7 @@ const LoginPage = ({ login, isAuth }) => {
 	}
 	return (
 		<>
-			<LoginPageReduxForm onSubmit={addLoginData} isAuth={isAuth} />
+			<LoginPageReduxForm onSubmit={addLoginData} captchaUrl={captchaUrl} />
 		</>
 	)
 }

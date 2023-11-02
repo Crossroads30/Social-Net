@@ -6,7 +6,7 @@ import SubmitButton from '../../common/buttons/SubmitButton'
 
 const maxLength30 = maxLengthCreator(30)
 
-const LoginPageForm = ({ handleSubmit, error }) => {
+const LoginPageForm = ({ handleSubmit, error, captchaUrl }) => {
 	return (
 		<>
 			<form onSubmit={handleSubmit} className={cl.loginForm}>
@@ -16,11 +16,9 @@ const LoginPageForm = ({ handleSubmit, error }) => {
 					{createField(null, '', 'rememberMe', null, 'input', { type: 'checkbox' }, 'Remember Me')}
 					<span>Remember me</span>
 				</div>
-				{error && (
-					<div className={cl.formSummaryError}>{error}</div>
-					/* используем диструктуризацию пропсов */
-					/* <div className={cl.formSummaryError}>{props.error}</div> */
-				)}
+				{captchaUrl && <img src={captchaUrl} />}
+				{captchaUrl && createField(null, 'Symbols from image', 'captcha', [required], 'input', {})}
+				{error && <div className={cl.formSummaryError}>{error}</div>}
 				<SubmitButton name={'Login'} />
 			</form>
 		</>
