@@ -4,6 +4,7 @@ import About from './About/About'
 import EditSocialList from './SocialList/EditSocialList'
 import UserName from './UserName/UserName'
 import Avatar from './Avatar/Avatar'
+import { Logout } from '../../../common/buttons/Logout'
 
 const ProfileInfo = ({ userProfile, userStatus, updateStatus, getUpdateUserProfile, getUserPhotoUpdate }) => {
 	if (!userProfile) {
@@ -20,6 +21,7 @@ const ProfileInfo = ({ userProfile, userStatus, updateStatus, getUpdateUserProfi
 					</div>
 					<div className={cl.info2}>
 						<EditSocialList getUpdateUserProfile={getUpdateUserProfile} userProfile={userProfile} />
+						<Logout />
 					</div>
 				</div>
 			</div>
