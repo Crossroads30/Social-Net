@@ -6,8 +6,8 @@ export const FormElement = ({ input, meta: { touched, error }, ...props }) => {
 
 	return (
 		<div className={classNames([cl.formControl], hasError ? [cl.error] : '')}>
+			{hasError && <p>{error}</p>}
 			<props.element_type {...input} {...props} />
-			{hasError && <span>{error}</span>}
 		</div>
 	)
 }
