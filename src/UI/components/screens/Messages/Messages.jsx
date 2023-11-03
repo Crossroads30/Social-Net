@@ -3,7 +3,7 @@ import cl from './Messages.module.css'
 const Messages = () => {
 	return (
 		<div>
-			<b>Messages</b>
+			<p>This page is in progress...</p>
 		</div>
 	)
 }
