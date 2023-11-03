@@ -3,12 +3,13 @@ import { connect } from 'react-redux'
 import MyProfile from './MyProfile'
 import { compose } from 'redux'
 import { withAuthRedirect } from '../../../../HOC/withAuthRedirect'
+import { withRouter } from '../../../../HOOKS/withRouter'
 
 class MyProfileContainer extends React.Component {
 	componentDidMount() {}
 
 	render() {
-		return <MyProfile  />
+		return <MyProfile isOwner={!this.props.match.params.userId} />
 	}
 }
 
@@ -18,5 +19,5 @@ const mapStateToProps = state => {
 	}
 }
 
-export default compose(connect(mapStateToProps, {}), withAuthRedirect)(MyProfileContainer)
+export default compose(connect(mapStateToProps, {}),withRouter, withAuthRedirect)(MyProfileContainer)
 // connect(mapStateToProps, {})(MyProfileContainer)
