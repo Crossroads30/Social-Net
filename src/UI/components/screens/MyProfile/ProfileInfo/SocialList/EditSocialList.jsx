@@ -2,8 +2,7 @@ import { EditSocialReduxForm } from '../EditProfileInfoForms/EditSocialForm'
 import { useState } from 'react'
 import SocialList from './SocialList'
 
-
-const EditSocialList = ({ userProfile, getUpdateUserProfile }) => {
+const EditSocialList = ({ userProfile, getUpdateUserProfile, isOwner }) => {
 	const [editSocial, setEditSocial] = useState(false)
 
 	const activateSocialEdit = () => {
@@ -22,14 +21,10 @@ const EditSocialList = ({ userProfile, getUpdateUserProfile }) => {
 	return (
 		<>
 			{editSocial ? (
-				<EditSocialReduxForm
-				  initialValues={userProfile}
-					closeWindow={deactivateSocialEdit}
-					userProfile={userProfile}
-					onSubmit={onSubmitEditForm}
-				/>
+				<EditSocialReduxForm initialValues={userProfile} closeWindow={deactivateSocialEdit} userProfile={userProfile} onSubmit={onSubmitEditForm} />
 			) : (
 				<SocialList
+					isOwner={isOwner}
 					userProfile={userProfile}
 					goToEditMode={() => {
 						activateSocialEdit(true)

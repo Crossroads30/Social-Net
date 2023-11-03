@@ -3,7 +3,7 @@ import EditButton from '../../../../common/buttons/EditButton'
 import cl from './UserName.module.css'
 import { EditUserNameReduxForm } from '../EditProfileInfoForms/EditUserNameForm'
 
-const UserName = ({ userProfile, getUpdateUserProfile }) => {
+const UserName = ({ userProfile, getUpdateUserProfile, isOwner }) => {
 	const [editUserName, setEditUserName] = useState(false)
 
 	const activateEditUser = () => {
@@ -22,7 +22,8 @@ const UserName = ({ userProfile, getUpdateUserProfile }) => {
 	return (
 		<div className={cl.fullName}>
 			{!editUserName && <h2>{userProfile.fullName}</h2>}
-			{!editUserName && <EditButton goToEditMode={activateEditUser} />}
+			{/* {!editUserName && <EditButton goToEditMode={activateEditUser} />} */}
+			{isOwner && !editUserName && <EditButton goToEditMode={activateEditUser} />}
 			{editUserName && (
 				<EditUserNameReduxForm
 					initialValues={userProfile}

@@ -9,6 +9,7 @@ class MyPostsContainer extends React.Component {
 	render() {
 		return (
 			<MyPosts
+				isOwner={this.props.isOwner}
 				posts={this.props.posts}
 				deletePost={this.props.deletePost}
 				photo={this.props.photo}

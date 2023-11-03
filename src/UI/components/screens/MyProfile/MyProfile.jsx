@@ -2,11 +2,11 @@ import MyPostsContainer from './MyPosts/MyPostsContainer'
 import cl from './MyProfile.module.css'
 import ProfileInfoContainer from './ProfileInfo/ProfileInfoContainer'
 
-const MyProfile = () => {
+const MyProfile = ({ isOwner }) => {
 	return (
 		<div className={cl.myProfileWrapper}>
 			<ProfileInfoContainer />
-			<MyPostsContainer />
+			<MyPostsContainer isOwner={isOwner} />
 		</div>
 	)
 }

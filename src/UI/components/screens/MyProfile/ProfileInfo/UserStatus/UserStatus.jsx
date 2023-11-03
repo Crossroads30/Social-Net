@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import cl from './UserStatus.module.css'
 import EditButton from '../../../../common/buttons/EditButton'
 
-const UserStatus = ({ userStatus, updateStatus }) => {
+const UserStatus = ({ userStatus, updateStatus, isOwner }) => {
 	let [editStatus, setEditStatus] = useState(false)
 	let [newStatus, setNewStatus] = useState(userStatus)
 
@@ -37,9 +37,7 @@ const UserStatus = ({ userStatus, updateStatus }) => {
 					}}
 				/>
 			)}
-			{!editStatus && (
-					<EditButton goToEditMode={activateEditStatus} />
-			)}
+			{isOwner && !editStatus && <EditButton goToEditMode={activateEditStatus} />}
 		</div>
 	)
 }

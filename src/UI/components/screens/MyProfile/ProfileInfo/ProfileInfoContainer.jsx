@@ -32,6 +32,7 @@ class ProfileInfoContainer extends React.Component {
 		return (
 			<ProfileInfo
 				{...this.props}
+				isOwner={!this.props.match.params.userId}
 				userProfile={this.props.userProfile}
 				userStatus={this.props.userStatus}
 				updateStatus={this.props.getUpdateUserStatus}

@@ -3,7 +3,7 @@ import { FormElement } from '../../../../common/form-tools/FormControls/FormElem
 import cl from './AddPost.module.css'
 import SubmitButton from '../../../../common/buttons/SubmitButton'
 
-const AddPostForm = props => {
+const AddPostForm = (props) => {
 	return (
 		<form onSubmit={props.handleSubmit}>
 			<div className={cl.newPostTextWrapper}>

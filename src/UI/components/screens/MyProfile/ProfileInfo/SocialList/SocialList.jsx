@@ -11,29 +11,27 @@ import mainLink from '../../../../../../assets/icons/icons8-link-48.png'
 import { useMemo } from 'react'
 import EditButton from '../../../../common/buttons/EditButton'
 
-const SocialList = ({ userProfile, goToEditMode }) => {
+const SocialList = ({ userProfile, goToEditMode, isOwner }) => {
 	return (
 		<div className={cl.social}>
 			<ul className={cl.socialList}>
 				{/* for preventing a dabble rendering  use 'useMemo()' method */}
 				{useMemo(() => {
-					return Object.entries(userProfile.contacts).map(
-						([key, value]) => {
-							return (
-								<li key={key}>
-									<div>
-										<a href={`http://${value}`}>
-											{/* for string(from 'key') to variable(import name) use 'eval() method!!!' */}
-											<img src={eval(key)} alt={key} />
-										</a>
-									</div>
-								</li>
-							)
-						}
-					)
+					return Object.entries(userProfile.contacts).map(([key, value]) => {
+						return (
+							<li key={key}>
+								<div>
+									<a href={`http://${value}`}>
+										{/* for string(from 'key') to variable(import name) use 'eval() method!!!' */}
+										<img src={eval(key)} alt={key} />
+									</a>
+								</div>
+							</li>
+						)
+					})
 				})}
 			</ul>
-			<EditButton goToEditMode={goToEditMode} />
+			{isOwner && <EditButton goToEditMode={goToEditMode} />}
 		</div>
 	)
 }
