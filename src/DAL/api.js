@@ -49,14 +49,14 @@ export const authApi = {
 	},
 }
 
-export const securityApi =  {
-		async getCaptchaUrl() {
+export const securityApi = {
+	async getCaptchaUrl() {
 		return await instance.get('/security/get-captcha-url')
-	}
+	},
 }
 
 export const usersApi = {
-	async getUsers() {
-		return await instance.get('/users')
-	}
+	async getUsers(currentPage = 1, pageSize = 5) {
+		return await instance.get(`/users?page=${currentPage}&count=${pageSize}`).then(response => response.data.items)
+	},
 }
