@@ -19,18 +19,29 @@
 	color: rgb(100, 103, 106);
 }
 
-.indicator span:last-child {
+.indicator p:last-child {
+	display: flex;
 	font-size: 12px;
 	color: rgb(184, 196, 205);
 	margin-top: 5px;
 }
 
-.indicator span:last-child::before {
+.online::before {
 	content: '';
 	display: inline-block;
 	width: 12px;
 	height: 12px;
 	background-color: rgb(74, 249, 4);
+	border-radius: 10px;
+	margin-right: 5px;
+}
+
+.offline::before {
+	content: '';
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	background-color: rgba(249, 4, 8, 0.516);
 	border-radius: 10px;
 	margin-right: 5px;
 }
