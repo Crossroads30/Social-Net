@@ -5,7 +5,7 @@ import { withSuspense } from './HOC/withSuspense'
 import Sidebar from './UI/components/Sidebar/Sidebar'
 import Chat from './UI/components/Chat/Chat'
 
-const MyProfileContainer = lazy(() => import('./UI/components/screens/MyProfile/MyProfile'))
+const MyProfileContainer = lazy(() => import('./UI/components/screens/MyProfile/MyProfileContainer'))
 const MessagesContainer = lazy(() => import('./UI/components/screens/Messages/MessagesContainer'))
 const ChannelsContainer = lazy(() => import('./UI/components/screens/Channels/ChannelsContainer'))
 const FriendsContainer = lazy(() => import('./UI/components/screens/Friends/FriendsContainer'))
