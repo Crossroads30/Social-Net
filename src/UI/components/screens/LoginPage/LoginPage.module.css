@@ -1,21 +1,52 @@
+.loginWrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.logoBlock {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.logoBlock img {
+	width: 30px;
+	height: 30px;
+	margin-right: 10px;
+}
+
+.logoBlock p {
+	color: rgb(0, 186, 219);
+}
+
 .loginForm {
-display: flex;
-flex-direction: column;
-align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
+
 .loginForm input {
-margin-bottom: 10px;
+	margin-bottom: 10px;
 }
+
 .checkbox {
-display: inline-flex;
+	display: inline-flex;
 }
+
 .checkbox input {
-margin: 0 5px 3px 0;
+	margin: 0 5px 3px 0;
 }
+
 .formSummaryError {
 	color: red;
 	padding: 10px;
 	border: 1px solid red;
 	margin-top: 20px;
 	width: 185px;
+}
+.captcha {
+	width: 170px;
+	margin: 20px 0;
 }
