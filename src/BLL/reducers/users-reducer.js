@@ -4,6 +4,8 @@ const SET_USERS = 'users-reducer/SET_USERS'
 
 let initialState = {
 	users: [],
+	currentPage: 1,
+	pageSize: 5,
 }
 
 const userReducer = (state = initialState, action) => {
@@ -25,9 +27,9 @@ export const setUsers = users => ({
 })
 
 //ThunkCreators:
-export const getAllUsers = () => async dispatch => {
+export const getAllUsers = (currentPage, PageSize) => async dispatch => {
 	try {
-		const response = await usersApi.getUsers()
+		const response = await usersApi.getUsers(currentPage, PageSize)
 		dispatch(setUsers(response))
 		console.log(response)
 	} catch (error) {
