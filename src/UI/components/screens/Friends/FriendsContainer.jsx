@@ -9,13 +9,18 @@ class FriendsContainer extends React.Component {
 	}
 
 	render() {
-		return <Friends allUsers={this.props.allUsers} />
+		return <Friends 
+			allUsers={this.props.allUsers} 
+			pageSize={this.props.pageSize} 
+			currentPage={this.props.currentPage} />
 	}
 }
 
 const mapStateToProps = state => {
 	return {
-		allUsers: state.friendsPage.users
+		allUsers: state.friendsPage.users,
+		pageSize: state.friendsPage.pageSize,
+		currentPage: state.friendsPage.currentPage,
 	}
 }
 
