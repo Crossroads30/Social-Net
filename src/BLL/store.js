@@ -5,11 +5,13 @@ import { compose } from 'redux'
 import profileReducer from './reducers/profile-reducer'
 import authReducer from './reducers/auth-reducer'
 import appReducer from './reducers/app-reducer'
+import userReducer from './reducers/users-reducer'
 
 const reducers = combineReducers({
 	profilePage: profileReducer,
 	auth: authReducer,
 	app: appReducer,
+	friendsPage: userReducer,
 	form: formReducer,
 })
 
