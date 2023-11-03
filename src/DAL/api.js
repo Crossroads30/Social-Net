@@ -54,3 +54,9 @@ export const securityApi =  {
 		return await instance.get('/security/get-captcha-url')
 	}
 }
+
+export const usersApi = {
+	async getUsers() {
+		return await instance.get('/users')
+	}
+}
