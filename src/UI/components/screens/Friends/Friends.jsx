@@ -1,11 +1,11 @@
 import cl from './Friends.module.css'
-import UserProfile from './UserProfile/UserProfile'
+import UserInfo from './UserInfo/UserInfo'
 
 const Friends = ({ allUsers, currentPage, pageSize }) => {
 	return (
 		<div className={cl.usersContainer}>
 			{allUsers.map(user => (
-				<UserProfile user={user} currentPage={currentPage} pageSize={pageSize} key={user.id} />
+				<UserInfo user={user} currentPage={currentPage} pageSize={pageSize} key={user.id} />
 			))}
 		</div>
 	)
