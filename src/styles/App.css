@@ -93,3 +93,11 @@
 .logout:hover span {
 	color: gray;
 }
+.follow-btn {
+	margin-top: 10px;
+	color: rgb(0, 186, 219);
+	background: transparent;
+	border-radius: 10px;
+	padding: 3px 10px;
+	border: 1px solid;
+}
