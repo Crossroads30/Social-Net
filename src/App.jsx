@@ -1,5 +1,5 @@
 import './styles/App.css'
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import React, { lazy } from 'react'
 import { withSuspense } from './HOC/withSuspense'
 import Sidebar from './UI/components/Sidebar/Sidebar'
@@ -24,7 +24,7 @@ function App() {
 			<main className='main'>
 				<Routes>
 					<Route path='/my-profile/:userId?' element={<MyProfileContainerWithSuspense />} />
-					<Route path='/' element={<MyProfileContainerWithSuspense />} />
+					<Route path='/' element={<Navigate from='/' to={'/my-profile'} />} />
 					<Route path='my-channels' element={<ChannelsContainerWithSuspense />} />
 					<Route path='/my-friends' element={<FriendsContainerWithSuspense />} />
 					<Route path='/messages' element={<MessagesContainerWithSuspense />} />
