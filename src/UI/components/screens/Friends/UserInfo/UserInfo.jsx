@@ -4,14 +4,17 @@ import FollowUnfollowButton from '../../../common/buttons/FollowButton'
 import cl from '../Friends.module.css'
 
 const UserInfo = ({ user, getFollowUser, getUnfollowUser, followingInProgress }) => {
-	// const onFollow = () => {
-	//   onclick(getUnfollowUser(user.id))
-	// }
+	const onFollow = e => {
+		e.preventDefault()
+		e.stopPropagation()
+		getUnfollowUser(user.id)
+	}
 
-	// const onUnfollow = () => {
-	// 	onclick(getFollowUser(user.id))
-		
-	// }
+	const onUnfollow = e => {
+		e.preventDefault()
+		e.stopPropagation()
+		getFollowUser(user.id)
+	}
 
 	return (
 		<NavLink to={'/profile/' + user.id} className={cl.userProfileWrapper}>
@@ -22,43 +25,26 @@ const UserInfo = ({ user, getFollowUser, getUnfollowUser, followingInProgress })
 				<div className={cl.userName}>{user.name.charAt(0).toUpperCase() + user.name.slice(1)}</div>
 				<div className={cl.userStatus}>{user.status === null ? 'No status' : user.status}</div>
 				{user.followed ? (
-					<FollowUnfollowButton name={'Unfollow'} handler={onUnfollow} />
+					<div
+						onClick={e => {
+							e.preventDefault()
+							e.stopPropagation()
+							getUnfollowUser(user.id)
+						}}
+					>
+						<FollowUnfollowButton name={'Unfollow'} />
+					</div>
 				) : (
-					<FollowUnfollowButton name={'Follow'} handler={onFollow} />
+					<div
+						onClick={e => {
+							e.preventDefault()
+							e.stopPropagation()
+							getFollowUser(user.id)
+						}}
+					>
+						<FollowUnfollowButton name={'Follow'} />
+					</div>
 				)}
-				{/* {user.followed ? (
-					<button
-						disabled={followingInProgress.some(
-							// кнопка становится неактивной во время запроса на подписку/отписку(follow/unfollow) на пользователя
-							id => id === user.id
-						)}
-						// className={cl.button}
-						onClick={e => {
-							e.preventDefault()
-							e.stopPropagation()
-							getUnfollowUser(user.id) // thunkCreator unfollow
-							// props.setFriend() // ссылка на thunkCreator getFriendsTC из sidebar-reducer
-						}}
-					>
-						Unfollow
-					</button>
-				) : (
-					<button
-						disabled={followingInProgress.some(
-							// кнопка становится неактивной во время запроса на подписку/отписку(follow/unfollow) на пользователя
-							id => id === user.id
-						)}
-						// className={cl.button}
-						onClick={e => {
-							e.preventDefault()
-							e.stopPropagation()
-							getFollowUser(user.id) // thunkCreator follow
-							// props.setFriend() // ссылка на thunkCreator getFriendsTC из sidebar-reducer
-						}}
-					>
-						Follow
-					</button>
-				)} */}
 			</div>
 		</NavLink>
 	)
