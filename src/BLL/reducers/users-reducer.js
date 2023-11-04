@@ -3,12 +3,14 @@ import { usersApi } from '../../DAL/api'
 const SET_USERS = 'users-reducer/SET_USERS'
 const SET_TOTAL_USERS_COUNT = 'users-reducer/SET_TOTAL_USERS_COUNT'
 const SET_CURRENT_PAGE = 'users-reducer/SET_CURRENT_PAGE'
+const TOGGLE_IS_LOADING = 'users-reducer/TOGGLE_IS_LOADING'
 
 let initialState = {
 	users: [],
 	currentPage: 1,
 	pageSize: 15,
 	totalUsersCount: 1000,
+	isLoading: true,
 }
 
 const userReducer = (state = initialState, action) => {
@@ -27,6 +29,11 @@ const userReducer = (state = initialState, action) => {
 			return {
 				...state,
 				currentPage: action.currentPage,
+			}
+		case TOGGLE_IS_LOADING:
+			return {
+				...state,
+				isLoading: action.isLoading,
 			}
 		default:
 			return state
@@ -48,6 +55,10 @@ export const setCurrentPage = currentPage => ({
 	type: SET_CURRENT_PAGE,
 	currentPage,
 })
+export const setIsLoading = isLoading => ({
+	type: TOGGLE_IS_LOADING,
+	isLoading,
+})
 
 //ThunkCreators:
 export const getAllUsers = (currentPage, PageSize) => async dispatch => {
@@ -55,8 +66,7 @@ export const getAllUsers = (currentPage, PageSize) => async dispatch => {
 		const response = await usersApi.getUsers(currentPage, PageSize)
 		dispatch(setUsers(response.items))
 		dispatch(setCurrentPage(currentPage))
-		// dispatch(setTotalUsersCount(response.totalCount))
-		console.log(response)
+		// dispatch(setTotalUsersCount(response.totalCount))// too many users(about 25000)
 	} catch (error) {
 		console.log(error)
 	}
