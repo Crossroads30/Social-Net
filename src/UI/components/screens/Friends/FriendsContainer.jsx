@@ -1,7 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Friends from './Friends'
-import { getAllUsers, setCurrentPage } from '../../../../BLL/reducers/users-reducer'
+import { 
+	getAllUsers, 
+	setCurrentPage, 
+	getFollowUser, 
+	getUnfollowUser 
+} from '../../../../BLL/reducers/users-reducer'
 
 class FriendsContainer extends React.Component {
 	componentDidMount() {
@@ -23,6 +28,8 @@ class FriendsContainer extends React.Component {
 				currentPage={this.props.currentPage}
 				totalUsersCount={this.props.totalUsersCount}
 				onPageChangeHandler={this.onPageChangeHandler}
+				getFollowUser={this.props.getFollowUser}
+				getUnfollowUser={this.props.getUnfollowUser}
 			/>
 		)
 	}
@@ -37,4 +44,9 @@ const mapStateToProps = state => {
 	}
 }
 
-export default connect(mapStateToProps, { getAllUsers, setCurrentPage })(FriendsContainer)
+export default connect(mapStateToProps, { 
+	getAllUsers, 
+	setCurrentPage, 
+	getFollowUser, 
+	getUnfollowUser 
+})(FriendsContainer)
