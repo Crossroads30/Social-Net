@@ -24,9 +24,10 @@ function App() {
 			<main className='main'>
 				<Routes>
 					<Route path='/my-profile/:userId?' element={<MyProfileContainerWithSuspense />} />
+					<Route path='/profile/:userId?' element={<MyProfileContainerWithSuspense />} />
 					<Route path='/' element={<Navigate from='/' to={'/my-profile'} />} />
 					<Route path='my-channels' element={<ChannelsContainerWithSuspense />} />
-					<Route path='/my-friends' element={<FriendsContainerWithSuspense />} />
+					<Route path='/my-friends/*' element={<FriendsContainerWithSuspense />} />
 					<Route path='/messages' element={<MessagesContainerWithSuspense />} />
 					<Route path='/login' element={<LoginPageContainerWithSuspense />} />
 					<Route exact path='*' element={<h2>404 - Page not found</h2>} />
