@@ -101,3 +101,8 @@
 	padding: 3px 10px;
 	border: 1px solid;
 }
+
+.follow-btn:hover {
+	background: rgba(0, 186, 219, 0.59);
+	color: aliceblue;
+}
