@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import cl from './Paginator.module.css'
 
-const Paginator = ({ totalUsersCount, pageSize, portionSize = 10 }) => {
-
+const Paginator = ({ totalUsersCount, pageSize, portionSize = 10, onPageChangeHandler }) => {
 	let pagesCount = Math.ceil(totalUsersCount / pageSize)
 
 	let pages = []
@@ -12,11 +11,9 @@ const Paginator = ({ totalUsersCount, pageSize, portionSize = 10 }) => {
 
 	let portionCount = Math.ceil(pagesCount / portionSize)
 
-  let [portionNumber, setPortionNumber] = useState(1)
-  let leftNumberOfPagePortion = (portionNumber - 1) * portionSize + 1
-  let rightNumberOfPagePortion = portionNumber * portionSize
-
-
+	let [portionNumber, setPortionNumber] = useState(1)
+	let leftNumberOfPagePortion = (portionNumber - 1) * portionSize + 1
+	let rightNumberOfPagePortion = portionNumber * portionSize
 
 	return (
 		<div className={cl.pagination}>
@@ -35,7 +32,13 @@ const Paginator = ({ totalUsersCount, pageSize, portionSize = 10 }) => {
 					.filter(page => page >= leftNumberOfPagePortion && page <= rightNumberOfPagePortion)
 					.map(page => {
 						return (
-							<span className={cl.pageNumber} key={page}>
+							<span
+								className={cl.pageNumber}
+								key={page}
+								onClick={() => {
+									onPageChangeHandler(page)
+								}}
+							>
 								{page}
 							</span>
 						)
