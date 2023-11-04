@@ -1,3 +1,18 @@
+.userProfileWrapper {
+  display: flex;
+  align-items: center;
+  background: white;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 20px;
+}
+
 .userAvatar {
   width: 100px;
+  margin-right: 10px;
+}
+
+.userName {
+  font-size: 28px;
+  margin-bottom: 20px;
 }
