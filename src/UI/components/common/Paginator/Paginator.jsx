@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import cl from './Paginator.module.css'
+import classNames from 'classnames'
 
-const Paginator = ({ totalUsersCount, pageSize, portionSize = 10, onPageChangeHandler }) => {
+const Paginator = ({ totalUsersCount, pageSize, portionSize = 10, onPageChangeHandler, currentPage }) => {
 	let pagesCount = Math.ceil(totalUsersCount / pageSize)
 
 	let pages = []
@@ -33,7 +34,7 @@ const Paginator = ({ totalUsersCount, pageSize, portionSize = 10, onPageChangeHa
 					.map(page => {
 						return (
 							<span
-								className={cl.pageNumber}
+								className={currentPage === page ? classNames([cl.pagination], 'span', [cl.selectedPage]) : classNames([cl.pagination], 'span')}
 								key={page}
 								onClick={() => {
 									onPageChangeHandler(page)
