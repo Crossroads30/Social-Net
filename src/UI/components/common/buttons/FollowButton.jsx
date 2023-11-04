@@ -1,6 +1,6 @@
-const FollowUnfollowButton = ({ name, handler }) => {
+const FollowUnfollowButton = ({ name }) => {
 	return (
-		<button className='follow-btn' onClick={handler}>
+		<button className='follow-btn'>
 			{name}
 		</button>
 	)
