@@ -3,7 +3,17 @@ import Preloader from '../../common/Preloader/Preloader'
 import cl from './Friends.module.css'
 import UserInfo from './UserInfo/UserInfo'
 
-const Friends = ({ allUsers, currentPage, pageSize, totalUsersCount, onPageChangeHandler, getAllUsers, getUnfollowUser, getFollowUser }) => {
+const Friends = ({
+	allUsers,
+	currentPage,
+	pageSize,
+	totalUsersCount,
+	onPageChangeHandler,
+	getAllUsers,
+	getUnfollowUser,
+	getFollowUser,
+	followingInProgress,
+}) => {
 	if (!getAllUsers) {
 		return (
 			<div>
@@ -29,6 +39,7 @@ const Friends = ({ allUsers, currentPage, pageSize, totalUsersCount, onPageChang
 						key={user.id}
 						getUnfollowUser={getUnfollowUser}
 						getFollowUser={getFollowUser}
+						followingInProgress={followingInProgress}
 					/>
 				))}
 			</div>

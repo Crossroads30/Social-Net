@@ -30,6 +30,7 @@ class FriendsContainer extends React.Component {
 				onPageChangeHandler={this.onPageChangeHandler}
 				getFollowUser={this.props.getFollowUser}
 				getUnfollowUser={this.props.getUnfollowUser}
+				followingInProgress={this.props.followingInProgress}
 			/>
 		)
 	}
@@ -41,6 +42,7 @@ const mapStateToProps = state => {
 		pageSize: state.friendsPage.pageSize,
 		currentPage: state.friendsPage.currentPage,
 		totalUsersCount: state.friendsPage.totalUsersCount,
+		followingInProgress: state.friendsPage.followingInProgress,
 	}
 }
 
