@@ -19,9 +19,7 @@ const UserInfo = ({ user, getFollowUser, getUnfollowUser, followingInProgress })
 	return (
 		<NavLink to={'/profile/' + user.id} className={cl.userProfileWrapper}>
 			<div>
-				{/* <NavLink to={'/profile/' + user.id} className={cl.userProfileWrapper}> */}
 				<img className={cl.userAvatar} src={user.photos.small ? user.photos.small : defaultUserImg} alt='Avatar' />
-				{/* </NavLink> */}
 				<div className={cl.userName}>{user.name.charAt(0).toUpperCase() + user.name.slice(1)}</div>
 				<div className={cl.userStatus}>{user.status === null ? 'No status' : user.status}</div>
 				{user.followed ? (
@@ -32,7 +30,7 @@ const UserInfo = ({ user, getFollowUser, getUnfollowUser, followingInProgress })
 							getUnfollowUser(user.id)
 						}}
 					>
-						<FollowUnfollowButton name={'Unfollow'} />
+						<FollowUnfollowButton name={'- Unfollow'} />
 					</div>
 				) : (
 					<div
@@ -42,7 +40,7 @@ const UserInfo = ({ user, getFollowUser, getUnfollowUser, followingInProgress })
 							getFollowUser(user.id)
 						}}
 					>
-						<FollowUnfollowButton name={'Follow'} />
+						<FollowUnfollowButton name={'+ Follow'} />
 					</div>
 				)}
 			</div>
