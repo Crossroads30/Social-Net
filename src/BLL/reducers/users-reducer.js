@@ -2,11 +2,12 @@ import { usersApi } from '../../DAL/api'
 
 const SET_USERS = 'users-reducer/SET_USERS'
 const SET_TOTAL_USERS_COUNT = 'users-reducer/SET_TOTAL_USERS_COUNT'
+const SET_CURRENT_PAGE = 'users-reducer/SET_CURRENT_PAGE'
 
 let initialState = {
 	users: [],
 	currentPage: 1,
-	pageSize: 5,
+	pageSize: 15,
 	totalUsersCount: 1000,
 }
 
@@ -21,6 +22,11 @@ const userReducer = (state = initialState, action) => {
 			return {
 				...state,
 				totalUsersCount: action.count,
+			}
+		case SET_CURRENT_PAGE:
+			return {
+				...state,
+				currentPage: action.currentPage,
 			}
 		default:
 			return state
@@ -38,11 +44,17 @@ export const setTotalUsersCount = count => ({
 	count,
 })
 
+export const setCurrentPage = currentPage => ({
+	type: SET_CURRENT_PAGE,
+	currentPage,
+})
+
 //ThunkCreators:
 export const getAllUsers = (currentPage, PageSize) => async dispatch => {
 	try {
 		const response = await usersApi.getUsers(currentPage, PageSize)
 		dispatch(setUsers(response.items))
+		dispatch(setCurrentPage(currentPage))
 		// dispatch(setTotalUsersCount(response.totalCount))
 		console.log(response)
 	} catch (error) {
