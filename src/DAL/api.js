@@ -57,6 +57,6 @@ export const securityApi = {
 
 export const usersApi = {
 	async getUsers(currentPage = 1, pageSize = 12) {
-		return await instance.get(`/users?page=${currentPage}&count=${pageSize}`).then(response => response.data.items)
+		return await instance.get(`/users?page=${currentPage}&count=${pageSize}`).then(response => response.data)
 	},
 }
