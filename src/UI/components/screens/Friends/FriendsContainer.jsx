@@ -5,7 +5,8 @@ import { getAllUsers, setCurrentPage } from '../../../../BLL/reducers/users-redu
 
 class FriendsContainer extends React.Component {
 	componentDidMount() {
-		this.props.getAllUsers()
+		const { currentPage, pageSize } = this.props
+		this.props.getAllUsers(currentPage, pageSize)
 	}
 
 	onPageChangeHandler = (pageNumber) => {
@@ -16,6 +17,7 @@ class FriendsContainer extends React.Component {
 	render() {
 		return (
 			<Friends
+				getAllUsers={this.props.getAllUsers}
 				allUsers={this.props.allUsers}
 				pageSize={this.props.pageSize}
 				currentPage={this.props.currentPage}
