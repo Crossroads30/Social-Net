@@ -25,7 +25,7 @@ const ProfileInfo = ({ userProfile, userStatus, updateStatus, getUpdateUserProfi
 					</div>
 				</div>
 			</div>
-			<About userProfile={userProfile} getUpdateUserProfile={getUpdateUserProfile} />
+			<About userProfile={userProfile} getUpdateUserProfile={getUpdateUserProfile} isOwner={isOwner} />
 		</>
 	)
 }

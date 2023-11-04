@@ -5,7 +5,7 @@ import CloseButton from '../../../../common/buttons/CloseButton'
 import EditButton from '../../../../common/buttons/EditButton'
 import { EditAboutReduxForm } from '../EditProfileInfoForms/EditAboutForm'
 
-const About = ({ userProfile, getUpdateUserProfile }) => {
+const About = ({ userProfile, getUpdateUserProfile, isOwner }) => {
 	const [about, setAbout] = useState(false)
 
 	const openAbout = () => {
@@ -44,16 +44,14 @@ const About = ({ userProfile, getUpdateUserProfile }) => {
 							<div className={cl.aboutMeInfo}>
 								<div>
 									<p>About me:</p>
-									<span>{userProfile.aboutMe}</span>
+									<span>{userProfile.aboutMe ? userProfile.aboutMe : 'No Info'}</span>
 								</div>
 								<div>
 									<p>My skills:</p>
-									<span>{userProfile.lookingForAJobDescription}</span>
+									<span>{userProfile.lookingForAJobDescription ? userProfile.lookingForAJobDescription : 'No Info'}</span>
 								</div>
 							</div>
-							<div className={cl.editAboutButton}>
-								<EditButton goToEditMode={activateEditAbout} />
-							</div>
+							<div className={cl.editAboutButton}>{isOwner && <EditButton goToEditMode={activateEditAbout} />}</div>
 						</>
 					)}
 					{editAbout && (
