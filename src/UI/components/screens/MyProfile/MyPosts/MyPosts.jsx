@@ -7,7 +7,7 @@ const MyPosts = ({ posts, deletePost, photo, isOwner }) => {
 		<div>
 			{isOwner && <AddPostContainer />}
 			{posts.map(post => (
-				<Post postId={post.id} text={post.message} likes={post.likes} key={post.id} deletePost={deletePost} photo={photo} />
+				<Post postId={post.id} text={post.message} likes={post.likes} key={post.id} deletePost={deletePost} photo={photo} isOwner={isOwner} />
 			))}
 		</div>
 	)
