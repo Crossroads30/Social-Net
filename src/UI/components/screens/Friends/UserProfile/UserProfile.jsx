@@ -1,16 +1,14 @@
 import defaultUserImg from '../../../../../assets/icons/default-user-img.png'
-import cl from './UserProfile.module.css'
+import FollowUnfollowButton from '../../../common/buttons/FollowButton'
+import cl from '../Friends.module.css'
 
 const UserProfile = ({ user }) => {
-	return (
-		<div className={cl.userProfileWrapper}>
-			<div className={cl.userAvatarWrapper}>
-				<img className={cl.userAvatar} src={user.photos.small ? user.photos.small : defaultUserImg} alt='Avatar' />
-			</div>
-			<div className={cl.userAvatarWrapper}>
-				<div className={cl.userName}>{user.name.charAt(0).toUpperCase() + user.name.slice(1)}</div>
-				<div className={cl.userStatus}>{user.status === null ? 'No status' : user.status}</div>
-			</div>
+	return (	
+			<div className={cl.userProfileWrapper}>
+					<img className={cl.userAvatar} src={user.photos.small ? user.photos.small : defaultUserImg} alt='Avatar' />
+					<div className={cl.userName}>{user.name.charAt(0).toUpperCase() + user.name.slice(1)}</div>
+					<div className={cl.userStatus}>{user.status === null ? 'No status' : user.status}</div>
+					<FollowUnfollowButton name={'Follow'} />
 		</div>
 	)
 }
