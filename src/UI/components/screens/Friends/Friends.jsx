@@ -3,7 +3,7 @@ import UserProfile from './UserProfile/UserProfile'
 
 const Friends = ({ allUsers, currentPage, pageSize }) => {
 	return (
-		<div>
+		<div className={cl.usersContainer}>
 			{allUsers.map(user => (
 				<UserProfile user={user} currentPage={currentPage} pageSize={pageSize} key={user.id} />
 			))}
