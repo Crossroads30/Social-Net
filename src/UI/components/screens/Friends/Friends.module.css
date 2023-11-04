@@ -1,3 +1,8 @@
+.friendsWrapper {
+	display: flex;
+	flex-direction: column;
+}
+
 .usersContainer {
 	display: flex;
   flex-wrap: wrap;
