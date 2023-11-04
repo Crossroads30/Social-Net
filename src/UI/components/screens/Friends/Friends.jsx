@@ -3,7 +3,7 @@ import Preloader from '../../common/Preloader/Preloader'
 import cl from './Friends.module.css'
 import UserInfo from './UserInfo/UserInfo'
 
-const Friends = ({ allUsers, currentPage, pageSize, totalUsersCount, onPageChangeHandler, getAllUsers }) => {
+const Friends = ({ allUsers, currentPage, pageSize, totalUsersCount, onPageChangeHandler, getAllUsers, getUnfollowUser, getFollowUser }) => {
 	if (!getAllUsers) {
 		return (
 			<div>
@@ -22,7 +22,14 @@ const Friends = ({ allUsers, currentPage, pageSize, totalUsersCount, onPageChang
 			/>
 			<div className={cl.usersContainer}>
 				{allUsers.map(user => (
-					<UserInfo user={user} currentPage={currentPage} pageSize={pageSize} key={user.id} />
+					<UserInfo
+						user={user}
+						currentPage={currentPage}
+						pageSize={pageSize}
+						key={user.id}
+						getUnfollowUser={getUnfollowUser}
+						getFollowUser={getFollowUser}
+					/>
 				))}
 			</div>
 			<Paginator
