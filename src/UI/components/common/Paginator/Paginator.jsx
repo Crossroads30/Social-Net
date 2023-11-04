@@ -19,14 +19,14 @@ const Paginator = ({ totalUsersCount, pageSize, portionSize = 10, onPageChangeHa
 	return (
 		<div className={cl.pagination}>
 			{portionNumber > 1 && (
-				<span
+				<div
 					className={cl.pageButton}
 					onClick={() => {
 						setPortionNumber(portionNumber - 1)
 					}}
 				>
-					{'<<'}
-				</span>
+					{'Prev'}
+				</div>
 			)}
 			<div className={cl.pageNumbers}>
 				{pages
@@ -45,14 +45,14 @@ const Paginator = ({ totalUsersCount, pageSize, portionSize = 10, onPageChangeHa
 						)
 					})}
 				{portionCount > portionNumber && (
-					<span
+					<div
 						className={cl.pageButton}
 						onClick={() => {
 							setPortionNumber(portionNumber + 1)
 						}}
 					>
-						{'>>'}
-					</span>
+						{'Next'}
+					</div>
 				)}
 			</div>
 		</div>
