@@ -1,8 +1,16 @@
 import Paginator from '../../common/Paginator/Paginator'
+import Preloader from '../../common/Preloader/Preloader'
 import cl from './Friends.module.css'
 import UserInfo from './UserInfo/UserInfo'
 
-const Friends = ({ allUsers, currentPage, pageSize, totalUsersCount, onPageChangeHandler }) => {
+const Friends = ({ allUsers, currentPage, pageSize, totalUsersCount, onPageChangeHandler, getAllUsers }) => {
+	if (!getAllUsers) {
+		return (
+			<div>
+				<Preloader />
+			</div>
+		)
+	}
 	return (
 		<div className={cl.friendsWrapper}>
 			<Paginator

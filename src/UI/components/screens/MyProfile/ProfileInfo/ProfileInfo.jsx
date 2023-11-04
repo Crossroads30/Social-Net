@@ -5,10 +5,11 @@ import EditSocialList from './SocialList/EditSocialList'
 import UserName from './UserName/UserName'
 import Avatar from './Avatar/Avatar'
 import { Logout } from '../../../common/buttons/Logout'
+import Preloader from '../../../common/Preloader/Preloader'
 
 const ProfileInfo = ({ userProfile, userStatus, updateStatus, getUpdateUserProfile, getUserPhotoUpdate, logout, isOwner }) => {
 	if (!userProfile) {
-		return <div> Loading...</div>
+		return <div> <Preloader /></div>
 	}
 	return (
 		<>
