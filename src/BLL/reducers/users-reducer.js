@@ -6,6 +6,7 @@ const SET_CURRENT_PAGE = 'users-reducer/SET_CURRENT_PAGE'
 const TOGGLE_IS_LOADING = 'users-reducer/TOGGLE_IS_LOADING'
 const FOLLOW = 'users-reducer/FOLLOW'
 const UNFOLLOW = 'users-reducer/UNFOLLOW'
+const DISABLE_BUTTON_WHILE_FOLLOWING_IN_PROGRESS = 'users/DISABLE-FETCHING-BUTTON'
 
 let initialState = {
 	users: [],
@@ -13,6 +14,7 @@ let initialState = {
 	pageSize: 15,
 	totalUsersCount: 1000,
 	isLoading: true,
+	followingInProgress: [],
 }
 
 const userReducer = (state = initialState, action) => {
@@ -57,6 +59,13 @@ const userReducer = (state = initialState, action) => {
 					return user
 				}),
 			}
+		case DISABLE_BUTTON_WHILE_FOLLOWING_IN_PROGRESS:
+			return {
+				...state,
+				followingInProgress: action.isLoading
+					? [...state.followingInProgress, action.userId]
+					: [state.followingInProgress.filter(id => id != action.userId)],
+			}
 		default:
 			return state
 	}
@@ -93,6 +102,12 @@ export const unfollowUser = userId => ({
 	userId,
 })
 
+export const setDisableFetchingButton = (isLoading, userId) => ({
+	type: DISABLE_BUTTON_WHILE_FOLLOWING_IN_PROGRESS,
+	isLoading,
+	userId,
+})
+
 //ThunkCreators:
 export const getAllUsers = (currentPage, PageSize) => async dispatch => {
 	try {
@@ -105,22 +120,61 @@ export const getAllUsers = (currentPage, PageSize) => async dispatch => {
 	}
 }
 
-export const getFollowUser = (userId) => async dispatch => {
-	try {
-		const response = await usersApi.getFollow(userId)
-		response.resultCose === 0 && dispatch(followUser(userId))
-	} catch (error) {
-		console.log(error)
-	}
+//general function for follow/unfollow
+const followUnfollowFlow = async (
+	dispatch,
+	userId,
+	apiMethod,
+	actionCreator
+) => {
+	dispatch(setDisableFetchingButton(true, userId))
+	let data = await apiMethod(userId)
+
+	data.resultCode === 0 && dispatch(actionCreator(userId))
+	dispatch(setDisableFetchingButton(false, userId))
 }
 
-export const getUnfollowUser = (userId) => async dispatch => {
-	try {
-		const response = await usersApi.getUnfollow(userId)
-		response.resultCose === 0 && dispatch(followUser(userId))
-	} catch (error) {
-		console.log(error)
-	}
+export const getFollowUser = userId => async dispatch => {
+	followUnfollowFlow(
+		dispatch,
+		userId,
+		usersApi.getFollow.bind(userId),
+		followUser
+	)
 }
+
+export const getUnfollowUser = userId => async dispatch => {
+	followUnfollowFlow(
+		dispatch,
+		userId,
+		usersApi.getUnfollow.bind(userId),
+		unfollowUser
+	)
+}
+
+// without function followUnfollowFlow
+// export const getFollowUser = userId => async dispatch => {
+// 	try {
+// 		dispatch(setDisableFetchingButton(true, userId))
+// 		const data = await usersApi.getFollow(userId)
+// 		data.resultCose === 0 && dispatch(followUser(userId))
+// 		dispatch(setDisableFetchingButton(false, userId))
+// 		dispatch(followUser(userId))
+// 	} catch (error) {
+// 		console.log(error)
+// 	}
+// }
+
+// export const getUnfollowUser = userId => async dispatch => {
+// 	try {
+// 		dispatch(setDisableFetchingButton(true, userId))
+// 		const data = await usersApi.getUnfollow(userId)
+// 		data.resultCose === 0 && dispatch(followUser(userId))
+// 		dispatch(setDisableFetchingButton(false, userId))
+// 		dispatch(unfollowUser(userId))
+// 	} catch (error) {
+// 		console.log(error)
+// 	}
+// }
 
 export default userReducer
