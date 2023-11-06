@@ -18,6 +18,16 @@ const LoginPage = ({ login, isAuth, captchaUrl }) => {
 				<p>Please login to enter 'CALYPSO' </p>
 			</div>
 			<LoginPageReduxForm onSubmit={addLoginData} captchaUrl={captchaUrl} />
+			<div className={cl.guest}>
+				<div>
+					<p>Guest email:</p>
+					<p>free@samuraijs.com</p>
+				</div>
+				<div>
+					<p>Guest password:</p>
+					<p>free</p>
+				</div>
+			</div>
 		</div>
 	)
 }

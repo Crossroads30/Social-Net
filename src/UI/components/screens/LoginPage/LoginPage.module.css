@@ -26,6 +26,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	margin-bottom: 20px;
 }
 
 .loginForm input {
@@ -50,4 +51,25 @@
 .captcha {
 	width: 170px;
 	margin: 20px 0;
+}
+
+.guest {
+	margin-bottom: 10px;
+	font-size: 20px;
+}
+
+.guest div {
+	display: flex;
+	margin-bottom: 10px;
+}
+
+.guest div p:first-child {
+	color: rgb(0, 186, 219);
+	margin-right: 10px;
+
+}
+
+.guest div p:last-child {
+	color: rgb(34, 187, 3);
+
 }
