@@ -32,8 +32,6 @@ const SocialList = ({ userProfile, goToEditMode, isOwner }) => {
 							<li key={key}>
 								<div>
 									<a href={`http://${value}`}>
-										{/* for string(from 'key') to variable(import name) use 'eval() method!!!' */}
-										{/* <img src={eval(key)} alt={key} /> */} {/* does not work in production  */}
 										{Object.entries(imports).map(([name, path]) => {
 											 if (key === name && path) {
 												return (
