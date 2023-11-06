@@ -1,6 +1,6 @@
-const FollowUnfollowButton = ({ name }) => {
+const FollowUnfollowButton = ({ name, classN }) => {
 	return (
-		<button className='follow-btn'>
+		<button className={classN} >
 			{name}
 		</button>
 	)
