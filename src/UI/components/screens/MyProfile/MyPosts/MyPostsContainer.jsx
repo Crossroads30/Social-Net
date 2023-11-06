@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import MyPosts from './MyPosts'
-import { deletePost } from '../../../../../BLL/reducers/profile-reducer'
+import { deletePost, addLikesToPost } from '../../../../../BLL/reducers/profile-reducer'
 
 class MyPostsContainer extends React.Component {
 	componentDidMount() {}
@@ -13,6 +13,7 @@ class MyPostsContainer extends React.Component {
 				posts={this.props.posts}
 				deletePost={this.props.deletePost}
 				photo={this.props.photo}
+				addLikesToPost={this.props.addLikesToPost}
 			/>
 		)
 	}
@@ -30,4 +31,4 @@ const mapStateToProps = state => {
 	}
 }
 
-export default connect(mapStateToProps, { deletePost })(MyPostsContainer)
+export default connect(mapStateToProps, { deletePost, addLikesToPost })(MyPostsContainer)
