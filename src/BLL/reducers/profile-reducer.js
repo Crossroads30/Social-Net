@@ -124,7 +124,7 @@ export const getUpdateUserStatus = userStatus => async dispatch => {
 }
 
 export const getUpdateUserProfile = userProfile => async (dispatch, getState) => {
-		const userId = 30064
+		const userId = getState().auth.id
 		const response = await profileApi.updateProfile(userProfile)
 		if (response.data.resultCode === 0) {
 			dispatch(getUserProfile(userId))
