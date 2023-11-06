@@ -1,1 +1,10 @@
 
+.friendsChat {
+  width: 100%;
+  min-height: 30px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  border-bottom: 2px solid rgb(216, 228, 238);
+  color: rgb(0, 186, 219);
+}

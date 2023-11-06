@@ -1,9 +1,10 @@
 .indicator {
 	width: 100%;
+	min-height: 40px;
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 	align-items: center;
-	padding-top: 10px;
 	border-top: 2px solid rgb(216, 228, 238);
 	margin-top: auto;
 }
@@ -11,6 +12,7 @@
 .indicatorBlock {
 	width: 90px;
 	text-align: left;
+	padding-top: 10px;
 }
 
 .indicator span {
