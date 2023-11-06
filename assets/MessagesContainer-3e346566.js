@@ -1,1 +1,0 @@
-import{j as s,c as a,R as n}from"./index-08562fdb.js";const t="_massages_1dkzh_1",o={massages:t},r=()=>s.jsx("div",{className:o.massages,children:s.jsx("p",{children:"This page is in progress..."})});class c extends n.Component{componentDidMount(){}render(){return s.jsx(r,{})}}const i=e=>({}),p=a(i,{})(c);export{p as default};
