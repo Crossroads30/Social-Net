@@ -12,6 +12,16 @@ import { useMemo } from 'react'
 import EditButton from '../../../../common/buttons/EditButton'
 
 const SocialList = ({ userProfile, goToEditMode, isOwner }) => {
+	let imports = {
+		facebook: facebook,
+		twitter: twitter,
+		github: github,
+		instagram: instagram,
+		youtube: youtube,
+		website: website,
+		vk: vk,
+		mainLink: mainLink,
+	}
 	return (
 		<div className={cl.social}>
 			<ul className={cl.socialList}>
@@ -23,7 +33,14 @@ const SocialList = ({ userProfile, goToEditMode, isOwner }) => {
 								<div>
 									<a href={`http://${value}`}>
 										{/* for string(from 'key') to variable(import name) use 'eval() method!!!' */}
-										<img src={eval(key)} alt={key} />
+										{/* <img src={eval(key)} alt={key} /> */} {/* does not work in production  */}
+										{Object.entries(imports).map(([name, path]) => {
+											 if (key === name && path) {
+												return (
+													<img src={path} alt={name} />
+												)
+											 }
+											})}
 									</a>
 								</div>
 							</li>
