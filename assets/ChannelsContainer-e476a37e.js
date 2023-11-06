@@ -1,1 +1,0 @@
-import{j as n,c as e,R as t}from"./index-35048f15.js";const a="_channels_1oxxd_1",o={channels:a},c=()=>n.jsx("div",{className:o.channels,children:n.jsx("p",{children:"This page is in progress..."})});class r extends t.Component{componentDidMount(){}render(){return n.jsx(c,{})}}const l=s=>({}),h=e(l,{})(r);export{h as default};
