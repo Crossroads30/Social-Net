@@ -2,7 +2,7 @@ import cl from './Channels.module.css'
 
 const Channels = () => {
 	return (
-		<div>
+		<div className={cl.channels}>
 			<p>This page is in progress...</p>
 		</div>
 	)
