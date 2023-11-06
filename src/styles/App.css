@@ -40,6 +40,8 @@
 
 .box-wrapper2 {
 	position: fixed;
+	display: flex;
+	justify-content: space-between;
 }
 
 .box-wrapper1 {
