@@ -6,6 +6,7 @@ const DELETE_POST = 'profile/DELETE_POST'
 const SET_USER_PROFILE = 'profile/SET_USER_PROFILE'
 const SET_USER_STATUS = 'profile/SET_USER_STATUS'
 const UPDATE_PHOTO = 'profile/UPDATE_PHOTO'
+const ADD_LIKE = 'profile/ADD_LIKE'
 
 let initialState = {
 	posts: [
@@ -51,7 +52,17 @@ const profileReducer = (state = initialState, action) => {
 		case UPDATE_PHOTO:
 			return {
 				...state,
-				userProfile: {...state.userProfile, photos: action.userPhoto},
+				userProfile: { ...state.userProfile, photos: action.userPhoto },
+			}
+		case ADD_LIKE:
+			return {
+				...state,
+				posts: state.posts.map(post => {
+					if (post.id === action.postId) {
+						return { ...post, likes: post.likes + 1 }
+					}
+					return post
+				}),
 			}
 		default:
 			return state
@@ -78,6 +89,10 @@ export const setUserStatus = userStatus => ({
 export const updateUserPhoto = userPhoto => ({
 	type: UPDATE_PHOTO,
 	userPhoto,
+})
+export const addLikesToPost = postId => ({
+	type: ADD_LIKE,
+	postId,
 })
 
 //ThunkCreators:
