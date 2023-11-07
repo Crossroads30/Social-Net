@@ -8,6 +8,10 @@ class ChatContainer extends React.Component {
 		this.props.getFriends()
 	}
 
+	// componentDidUpdate() {
+	// 	this.props.getFriends()
+	// }
+
 	render() {
 		return <Chat followedFriends={this.props.followedFriends} />
 	}
