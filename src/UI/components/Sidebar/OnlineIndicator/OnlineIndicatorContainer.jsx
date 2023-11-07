@@ -3,7 +3,9 @@ import { connect } from 'react-redux'
 import OnlineIndicator from './OnlineIndicator'
 
 class OnlineIndicatorContainer extends React.Component {
-	componentDidMount() {}
+	componentDidMount() {
+		this.props.loginName
+	}
 
 	render() {
 		return <OnlineIndicator loginName={this.props.loginName} />
@@ -11,7 +13,7 @@ class OnlineIndicatorContainer extends React.Component {
 }
 
 const mapStateToProps = state => {
-	if (state.profilePage.userProfile !== null) {
+	if (state.auth.isAuth) {
 		return {
 			loginName: state.auth.login,
 		}
