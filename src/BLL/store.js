@@ -6,12 +6,14 @@ import profileReducer from './reducers/profile-reducer'
 import authReducer from './reducers/auth-reducer'
 import appReducer from './reducers/app-reducer'
 import userReducer from './reducers/users-reducer'
+import friendsReducer from './reducers/friends-reducer'
 
 const reducers = combineReducers({
 	profilePage: profileReducer,
 	auth: authReducer,
 	app: appReducer,
 	friendsPage: userReducer,
+	friendsSidebar: friendsReducer,
 	form: formReducer,
 })
 
