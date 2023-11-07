@@ -1,17 +1,23 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Chat from './Chat'
+import { getFriends } from '../../../BLL/reducers/friends-reducer'
 
 class ChatContainer extends React.Component {
-	componentDidMount() {}
+	componentDidMount() {
+		this.props.getFriends(this.props.totalUsersCount)
+	}
 
 	render() {
-		return <Chat />
+		return <Chat followedFriends={this.props.followedFriends} />
 	}
 }
 
 const mapStateToProps = state => {
-	return {}
+	return {
+		followedFriends: state.friendsSidebar.followedFriends,
+		totalUsersCount: state.friendsSidebar.totalUsersCount,
+	}
 }
 
-export default connect(mapStateToProps, {})(ChatContainer)
+export default connect(mapStateToProps, { getFriends })(ChatContainer)
