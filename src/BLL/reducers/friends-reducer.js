@@ -4,6 +4,7 @@ const SET_FOLLOWED_FRIENDS = 'friends-reducer/SET_FOLLOWED_FRIENDS'
 
 let initialState = {
 	followedFriends: [],
+	totalFriendsCount: 100,
 }
 
 const friendsReducer = (state = initialState, action) => {
@@ -25,9 +26,9 @@ export const setFriends = followedFriends => ({
 })
 
 //ThunkCreators:
-export const getFriends = () => async dispatch => {
+export const getFriends = totalFriendsCount => async dispatch => {
 	try {
-		const response = await usersApi.getFollowedFriends()
+		const response = await usersApi.getFollowedFriends(totalFriendsCount)
 		dispatch(setFriends(response))
 	} catch (error) {
 		console.log(error)
