@@ -9,12 +9,11 @@ const Friends = ({
 	pageSize,
 	totalUsersCount,
 	onPageChangeHandler,
-	getAllUsers,
 	getUnfollowUser,
 	getFollowUser,
 	followingInProgress,
 }) => {
-	if (!getAllUsers) {
+	if (!allUsers) {
 		return (
 			<div>
 				<Preloader />
@@ -23,13 +22,16 @@ const Friends = ({
 	}
 	return (
 		<div className={cl.friendsWrapper}>
-			<Paginator
-				totalUsersCount={totalUsersCount}
-				allUsers={allUsers}
-				pageSize={pageSize}
-				onPageChangeHandler={onPageChangeHandler}
-				currentPage={currentPage}
-			/>
+			{allUsers && (
+				<Paginator
+					totalUsersCount={totalUsersCount}
+					allUsers={allUsers}
+					pageSize={pageSize}
+					onPageChangeHandler={onPageChangeHandler}
+					currentPage={currentPage}
+				/>
+			)}
+
 			<div className={cl.usersContainer}>
 				{allUsers.map(user => (
 					<UserInfo
