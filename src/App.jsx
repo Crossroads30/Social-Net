@@ -7,13 +7,11 @@ import Chat from './UI/components/Chat/Chat'
 
 const MyProfileContainer = lazy(() => import('./UI/components/screens/MyProfile/MyProfileContainer'))
 const MessagesContainer = lazy(() => import('./UI/components/screens/Messages/MessagesContainer'))
-const ChannelsContainer = lazy(() => import('./UI/components/screens/Channels/ChannelsContainer'))
 const FriendsContainer = lazy(() => import('./UI/components/screens/Friends/FriendsContainer'))
 const LoginPageContainer = lazy(() => import('./UI/components/screens/LoginPage/LoginPageContainer'))
 
 const MyProfileContainerWithSuspense = withSuspense(MyProfileContainer)
 const MessagesContainerWithSuspense = withSuspense(MessagesContainer)
-const ChannelsContainerWithSuspense = withSuspense(ChannelsContainer)
 const FriendsContainerWithSuspense = withSuspense(FriendsContainer) 
 const LoginPageContainerWithSuspense = withSuspense(LoginPageContainer) 
 
@@ -26,7 +24,6 @@ function App() {
 					<Route path='/my-profile/:userId?' element={<MyProfileContainerWithSuspense />} />
 					<Route path='/profile/:userId?' element={<MyProfileContainerWithSuspense />} />
 					<Route path='/' element={<Navigate from='/' to={'/my-profile'} />} />
-					<Route path='my-channels' element={<ChannelsContainerWithSuspense />} />
 					<Route path='/my-friends/*' element={<FriendsContainerWithSuspense />} />
 					<Route path='/messages' element={<MessagesContainerWithSuspense />} />
 					<Route path='/login' element={<LoginPageContainerWithSuspense />} />
