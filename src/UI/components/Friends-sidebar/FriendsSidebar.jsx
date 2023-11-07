@@ -10,9 +10,9 @@ const FriendsSidebar = ({ followedFriends }) => {
 				<div className={cl.friendsChat}>Friends</div>
 				<div className={cl.followedFriendsWrapper}>
 					<div className={cl.followedFriends}>
-						{followedFriends.map(friend => (
+						{/* {followedFriends.map(friend => (
 							<Friend name={friend.name} key={friend.id} photo={friend.photos.small} />
-						))}
+						))} */}
 					</div>
 				</div>
 				<Footer />
