@@ -16,7 +16,7 @@ const mapStateToProps = state => {
 			loginName: state.auth.login,
 		}
 	} return {
-		loginName: 'User Name',
+		loginName: null,
 	}
 }
 
