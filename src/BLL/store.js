@@ -13,7 +13,7 @@ const reducers = combineReducers({
 	auth: authReducer,
 	app: appReducer,
 	friendsPage: userReducer,
-	friendsSidebar: friendsReducer,
+	// friendsSidebar: friendsReducer,
 	form: formReducer,
 })
 
