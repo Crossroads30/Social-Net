@@ -1,4 +1,5 @@
 import cl from './Friend.module.css'
+import defaultUserPhoto from '../../../../assets/icons/default-user-img.png'
 
 const Friend = ({ photo, name }) => {
 	return (
