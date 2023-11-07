@@ -65,4 +65,7 @@ export const usersApi = {
 	async getUnfollow(userId) {
 		return await instance.delete(`/follow/${userId}`).then(response => response.data)
 	},
+	async getFollowedFriends(totalUsersCount = 30) {
+		return await instance.get(`users?friend=true&count=${totalUsersCount}`).then(response => response.data.items)
+	},
 }
