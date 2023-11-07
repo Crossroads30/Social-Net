@@ -11,8 +11,8 @@ const DISABLE_BUTTON_WHILE_FOLLOWING_IN_PROGRESS = 'users/DISABLE-FETCHING-BUTTO
 let initialState = {
 	users: [],
 	currentPage: 1,
-	pageSize: 9,
-	totalUsersCount: 100,
+	pageSize: 18,
+	totalUsersCount: 350,
 	isLoading: true,
 	followingInProgress: [],
 }
