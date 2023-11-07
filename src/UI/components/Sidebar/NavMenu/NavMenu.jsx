@@ -11,14 +11,6 @@ const NavMenu = () => {
 					</NavLink>
 				</li>
 				<li>
-					<NavLink
-						className={navData => (navData.isActive ? cl.active : cl.link)}
-						to='/my-channels'
-					>
-						My Channels
-					</NavLink>
-				</li>
-				<li>
 					<NavLink className={navData => (navData.isActive ? cl.active : cl.link)} to='/my-friends'>
 						Add Friends
 					</NavLink>
@@ -31,11 +23,6 @@ const NavMenu = () => {
 				<li>
 					<NavLink className={navData => (navData.isActive ? cl.active : cl.link)} to='/news'>
 						News
-					</NavLink>
-				</li>
-				<li>
-					<NavLink className={navData => (navData.isActive ? cl.active : cl.link)} to='/resources'>
-						Resources
 					</NavLink>
 				</li>
 				<li>
