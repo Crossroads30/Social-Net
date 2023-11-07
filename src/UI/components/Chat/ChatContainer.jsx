@@ -5,7 +5,7 @@ import { getFriends } from '../../../BLL/reducers/friends-reducer'
 
 class ChatContainer extends React.Component {
 	componentDidMount() {
-		this.props.getFriends(this.props.totalUsersCount)
+		this.props.getFriends()
 	}
 
 	render() {
@@ -16,7 +16,6 @@ class ChatContainer extends React.Component {
 const mapStateToProps = state => {
 	return {
 		followedFriends: state.friendsSidebar.followedFriends,
-		totalUsersCount: state.friendsSidebar.totalUsersCount,
 	}
 }
 
