@@ -8,7 +8,7 @@ class FriendsContainer extends React.Component {
 	componentDidMount() {
 		const { currentPage, pageSize } = this.props
 		this.props.getAllUsers(currentPage, pageSize)
-		this.props.getFriends(this.props.totalFriendsCount)
+		// this.props.getFriends(this.props.totalFriendsCount)
 	}
 
 	onPageChangeHandler = pageNumber => {
@@ -28,7 +28,7 @@ class FriendsContainer extends React.Component {
 				getFollowUser={this.props.getFollowUser}
 				getUnfollowUser={this.props.getUnfollowUser}
 				followingInProgress={this.props.followingInProgress}
-				setFriend={this.props.getFriends}
+				// setFriend={this.props.getFriends}
 			/>
 		)
 	}
@@ -40,7 +40,7 @@ const mapStateToProps = state => {
 		pageSize: state.friendsPage.pageSize,
 		currentPage: state.friendsPage.currentPage,
 		totalUsersCount: state.friendsPage.totalUsersCount,
-		totalFriendsCount: state.friendsSidebar.totalUsersCount,
+		// totalFriendsCount: state.friendsSidebar.totalUsersCount,
 		followingInProgress: state.friendsPage.followingInProgress,
 	}
 }
@@ -50,5 +50,5 @@ export default connect(mapStateToProps, {
 	setCurrentPage,
 	getFollowUser,
 	getUnfollowUser,
-	getFriends,
+	// getFriends,
 })(FriendsContainer)
