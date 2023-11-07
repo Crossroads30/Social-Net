@@ -2,10 +2,8 @@ import './styles/App.css'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import React, { lazy } from 'react'
 import { withSuspense } from './HOC/withSuspense'
-import Sidebar from './UI/components/Sidebar/Sidebar'
-import Chat from './UI/components/Chat/Chat'
-import ChatContainer from './UI/components/Chat/ChatContainer'
 import SidebarContainer from './UI/components/Sidebar/SidebarContainer'
+import FriendsSidebarContainer from './UI/components/Friends-sidebar/FriendsSidebarContainer'
 
 const MyProfileContainer = lazy(() => import('./UI/components/screens/MyProfile/MyProfileContainer'))
 const MessagesContainer = lazy(() => import('./UI/components/screens/Messages/MessagesContainer'))
@@ -32,7 +30,7 @@ function App() {
 					<Route exact path='*' element={<h2>404 - Page not found</h2>} />
 				</Routes>
 			</main>
-			<ChatContainer />
+			<FriendsSidebarContainer />
 		</div>
 	)
 }
