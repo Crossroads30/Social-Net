@@ -1,6 +1,5 @@
 import { NavLink } from 'react-router-dom'
 import defaultUserImg from '../../../../../assets/icons/default-user-img.png'
-import FollowUnfollowButton from '../../../common/buttons/FollowButton'
 import cl from '../Friends.module.css'
 import classNames from 'classnames'
 
@@ -23,12 +22,6 @@ const UserInfo = ({ user, getFollowUser, getUnfollowUser, followingInProgress, s
 						disabled={followingInProgress.some(id => id === user.id)}
 					>
 						- Unfollow
-						{/* <FollowUnfollowButton
-							userId={user.id}
-							followingInProgress={followingInProgress}
-							name={'- Unfollow'}
-							classN={classNames('follow-btn', 'unfollow-btn')}
-						/> */}
 					</button>
 				) : (
 					<button
@@ -42,7 +35,6 @@ const UserInfo = ({ user, getFollowUser, getUnfollowUser, followingInProgress, s
 						disabled={followingInProgress.some(id => id === user.id)}
 					>
 						+ Follow
-						{/* <FollowUnfollowButton userId={user.id} name={'+ Follow'} classN={'follow-btn'} followingInProgress={followingInProgress} /> */}
 					</button>
 				)}
 			</div>
