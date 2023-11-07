@@ -34,9 +34,7 @@ const SocialList = ({ userProfile, goToEditMode, isOwner }) => {
 									<a href={`http://${value}`}>
 										{Object.entries(imports).map(([name, path]) => {
 											 if (key === name && path) {
-												return (
-													<img src={path} alt={name} />
-												)
+												return <img key={name} src={path} alt={name} />
 											 }
 											})}
 									</a>
