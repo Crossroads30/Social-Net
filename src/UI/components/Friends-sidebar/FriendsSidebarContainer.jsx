@@ -1,15 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Chat from './Chat'
+import FriendsSidebar from './FriendsSidebar'
 import { getFriends } from '../../../BLL/reducers/friends-reducer'
 
-class ChatContainer extends React.Component {
+class FriendsSidebarContainer extends React.Component {
 	componentDidMount() {
 		this.props.getFriends(this.props.totalFriendsCount)
 	}
 
 	render() {
-		return <Chat followedFriends={this.props.followedFriends} />
+		return <FriendsSidebar followedFriends={this.props.followedFriends} />
 	}
 }
 
@@ -20,4 +20,4 @@ const mapStateToProps = state => {
 	}
 }
 
-export default connect(mapStateToProps, { getFriends })(ChatContainer)
+export default connect(mapStateToProps, { getFriends })(FriendsSidebarContainer)
