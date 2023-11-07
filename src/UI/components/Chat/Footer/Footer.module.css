@@ -6,6 +6,7 @@
   border-top: 2px solid rgb(216, 228, 238);
   min-height: 40px;
   width: 100%;
+  /* align-self: flex-end; */
 }
 
 .footer div {
