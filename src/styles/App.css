@@ -113,9 +113,27 @@
 	color: rgb(0, 219, 7);
 }
 
-.follow-btn:hover {
+.follow-btn:hover:enabled {
 	background: rgba(0, 186, 219, 0.59);
 	color: aliceblue;
+}
+
+/* .follow-btn:hover:disabled {
+	pointer-events: none;
+} */
+
+.unfollow-btn:hover:disabled {
+	pointer-events: none;
+	cursor: default;
+}
+
+.follow-btn.unfollow-btn:hover:disabled {
+	pointer-events: none;
+	cursor: default;
+}
+
+.follow-btn:disabled {
+	opacity: 0.3;
 }
 
 .preloader {
