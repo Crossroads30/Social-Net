@@ -4,6 +4,8 @@ import React, { lazy } from 'react'
 import { withSuspense } from './HOC/withSuspense'
 import Sidebar from './UI/components/Sidebar/Sidebar'
 import Chat from './UI/components/Chat/Chat'
+import ChatContainer from './UI/components/Chat/ChatContainer'
+import SidebarContainer from './UI/components/Sidebar/SidebarContainer'
 
 const MyProfileContainer = lazy(() => import('./UI/components/screens/MyProfile/MyProfileContainer'))
 const MessagesContainer = lazy(() => import('./UI/components/screens/Messages/MessagesContainer'))
@@ -18,7 +20,7 @@ const LoginPageContainerWithSuspense = withSuspense(LoginPageContainer)
 function App() {
 	return (
 		<div className='app-container'>
-			<Sidebar />
+			<SidebarContainer />
 			<main className='main'>
 				<Routes>
 					<Route path='/my-profile/:userId?' element={<MyProfileContainerWithSuspense />} />
@@ -30,7 +32,7 @@ function App() {
 					<Route exact path='*' element={<h2>404 - Page not found</h2>} />
 				</Routes>
 			</main>
-			<Chat />
+			<ChatContainer />
 		</div>
 	)
 }
