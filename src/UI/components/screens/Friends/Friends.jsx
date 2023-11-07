@@ -12,6 +12,7 @@ const Friends = ({
 	getUnfollowUser,
 	getFollowUser,
 	followingInProgress,
+	setFriend,
 }) => {
 	if (!allUsers) {
 		return (
@@ -42,6 +43,7 @@ const Friends = ({
 						getUnfollowUser={getUnfollowUser}
 						getFollowUser={getFollowUser}
 						followingInProgress={followingInProgress}
+						setFriend={setFriend}
 					/>
 				))}
 			</div>
