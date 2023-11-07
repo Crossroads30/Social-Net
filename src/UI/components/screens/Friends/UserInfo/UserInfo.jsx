@@ -4,19 +4,7 @@ import FollowUnfollowButton from '../../../common/buttons/FollowButton'
 import cl from '../Friends.module.css'
 import classNames from 'classnames'
 
-const UserInfo = ({ user, getFollowUser, getUnfollowUser, followingInProgress }) => {
-	const onFollow = e => {
-		e.preventDefault()
-		e.stopPropagation()
-		getUnfollowUser(user.id)
-	}
-
-	const onUnfollow = e => {
-		e.preventDefault()
-		e.stopPropagation()
-		getFollowUser(user.id)
-	}
-
+const UserInfo = ({ user, getFollowUser, getUnfollowUser, followingInProgress, setFriend }) => {
 	return (
 		<NavLink to={'/profile/' + user.id} className={cl.userProfileWrapper}>
 			<div>
@@ -24,25 +12,38 @@ const UserInfo = ({ user, getFollowUser, getUnfollowUser, followingInProgress })
 				<div className={cl.userName}>{user.name.charAt(0).toUpperCase() + user.name.slice(1)}</div>
 				<div className={cl.userStatus}>{user.status === null ? 'No status' : user.status}</div>
 				{user.followed ? (
-					<div
+					<button
+						className={classNames('follow-btn', 'unfollow-btn')}
 						onClick={e => {
 							e.preventDefault()
 							e.stopPropagation()
 							getUnfollowUser(user.id)
+							setFriend()
 						}}
+						disabled={followingInProgress.some(id => id === user.id)}
 					>
-						<FollowUnfollowButton name={'- Unfollow'} classN={classNames('follow-btn', 'unfollow-btn')} />
-					</div>
+						- Unfollow
+						{/* <FollowUnfollowButton
+							userId={user.id}
+							followingInProgress={followingInProgress}
+							name={'- Unfollow'}
+							classN={classNames('follow-btn', 'unfollow-btn')}
+						/> */}
+					</button>
 				) : (
-					<div
+					<button
+						className='follow-btn'
 						onClick={e => {
 							e.preventDefault()
 							e.stopPropagation()
 							getFollowUser(user.id)
+							setFriend()
 						}}
+						disabled={followingInProgress.some(id => id === user.id)}
 					>
-						<FollowUnfollowButton name={'+ Follow'} classN={'follow-btn'} />
-					</div>
+						+ Follow
+						{/* <FollowUnfollowButton userId={user.id} name={'+ Follow'} classN={'follow-btn'} followingInProgress={followingInProgress} /> */}
+					</button>
 				)}
 			</div>
 		</NavLink>
